@@ -181,3 +181,36 @@
   - rscadd: Balloon Alerts
   - rscadd: Brand Intelligence machines use Ballon Alerts to speak
   - rscadd: Balloon Alerts for surgery steps, taste and transferring reagents
+2024-03-17:
+  Kashargul:
+  - bugfix: fixes an issue where the vorebelly contents did not collapse to a list
+      as supposed to for more than 21 ingested items
+  - bugfix: fixes the assets on the chemSynthesizer being not properly initialized
+  - bugfix: fixes ntos icon direct loading on crew monitor
+  - bugfix: finally should resolve all our ntos icon cases
+  Raeschen:
+  - rscadd: Allow digitigrade legs for shadekin
+  - bugfix: nuke bad .procs in callbacks
+  TheCaramelion:
+  - balance: Adds the taste back to normal chat
+  - bugfix: Fulton beacons won't be sent to CentCom
+2024-03-18:
+  Kashargul:
+  - admin: adds an new verb that allows to use tgui inputs on some existing verbs
+  - bugfix: fixed and issue that prevents pulling objects through stairs
+  Raeschen:
+  - bugfix: fixed a couple runtimes related to bellies
+  - bugfix: chemmaster runtime
+2024-03-19:
+  Kashargul:
+  - bugfix: fixes an issue where closing the prompt clears the ooc note section (favs
+      / maybes)
+  Raeschen:
+  - bugfix: fixed upsidedown cargo console
+2024-03-20:
+  Raeschen:
+  - refactor: Remove obj/machinery recursivemove placement + signal registration as
+      a default, instead an optional
+  cadyn:
+  - rscadd: movement smoothing
+  - config: 40fps time
