@@ -422,7 +422,7 @@
 	to_wear_helmet = /obj/item/clothing/head/surgery/blue
 	to_wear_id_job = "Surgeon"
 
-/mob/living/carbon/human/ai_controlled/medical/virologist
+/mob/living/carbon/human/ai_controlled/job/medical/virologist
 	name = "Virologist"
 
 	to_wear_mask = /obj/item/clothing/mask/surgical
@@ -432,14 +432,14 @@
 	to_wear_id_type = /obj/item/weapon/card/id/medical/virologist
 	to_wear_id_job = "Virologist"
 
-/mob/living/carbon/human/ai_controlled/medical/nurse
+/mob/living/carbon/human/ai_controlled/job/medical/nurse
 	name = "Nurse"
 
 	to_wear_uniform = /obj/item/clothing/under/rank/medical/scrubs/purple
 	to_wear_suit = null
 	to_wear_id_job = "Nurse"
 
-/mob/living/carbon/human/ai_controlled/medical/chemist
+/mob/living/carbon/human/ai_controlled/job/medical/chemist
 	name = "Chemist"
 
 	to_wear_r_radio = null
@@ -450,7 +450,7 @@
 	to_wear_id_type = /obj/item/weapon/card/id/medical/chemist
 	to_wear_id_job = "Chemist"
 
-/mob/living/carbon/human/ai_controlled/medical/geneticist
+/mob/living/carbon/human/ai_controlled/job/medical/geneticist
 	name = "Geneticist"
 
 	to_wear_uniform = /obj/item/clothing/under/rank/geneticist
@@ -460,7 +460,7 @@
 	to_wear_id_type = /obj/item/weapon/card/id/medical/geneticist
 	to_wear_id_job = "Geneticist"
 
-/mob/living/carbon/human/ai_controlled/medical/psychiatrist
+/mob/living/carbon/human/ai_controlled/job/medical/psychiatrist
 	name = "Psychiatrist"
 
 	to_wear_r_radio = null
@@ -470,7 +470,7 @@
 	to_wear_id_type = /obj/item/weapon/card/id/medical/psych
 	to_wear_id_job = "Psychiatrist"
 
-/mob/living/carbon/human/ai_controlled/medical/paramedic
+/mob/living/carbon/human/ai_controlled/job/medical/paramedic
 	name = "Paramedic"
 
 	to_wear_r_radio = null
@@ -481,14 +481,14 @@
 	to_wear_id_type = /obj/item/weapon/card/id/medical/emt
 	to_wear_id_job = "Paramedic"
 
-/mob/living/carbon/human/ai_controlled/medical/paramedic/emt
+/mob/living/carbon/human/ai_controlled/job/medical/paramedic/emt
 	name = "Emergency Medical Technician"
 
 	to_wear_uniform = /obj/item/clothing/under/rank/medical/paramedic_alt
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat/emt
 	to_wear_id_job = "Emergency Medical Technician"
 
-/mob/living/carbon/human/ai_controlled/medical/cmo
+/mob/living/carbon/human/ai_controlled/job/medical/cmo
 	name = "Chief Medical Officer"
 
 	to_wear_l_radio = /obj/item/device/radio/headset/heads/cmo
