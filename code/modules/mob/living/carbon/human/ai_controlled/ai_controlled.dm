@@ -14,6 +14,11 @@
 	var/generate_id_gender = FALSE
 
 	var/to_wear_hair = "Bald"
+	var/to_wear_beard = "Shaved"
+
+	var/hair_hue_red = 0
+	var/hair_hue_green = 0
+	var/hair_hue_blue = 0
 
 	var/to_wear_helmet = /obj/item/clothing/head/welding
 	var/to_wear_glasses = /obj/item/clothing/glasses/threedglasses
@@ -44,6 +49,15 @@
 	..(loc, generate_species)
 
 	h_style = to_wear_hair
+
+	f_style = to_wear_beard
+
+	r_hair = hair_hue_red
+	r_facial = hair_hue_red
+	g_hair = hair_hue_green
+	g_facial = hair_hue_green
+	b_hair = hair_hue_blue
+	b_facial = hair_hue_blue
 
 	if(to_wear_uniform)
 		equip_to_slot_or_del(new to_wear_uniform(src), slot_w_uniform)

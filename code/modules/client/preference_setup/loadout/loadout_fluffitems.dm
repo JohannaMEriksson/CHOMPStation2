@@ -14,3 +14,9 @@
 	allowed_roles = list("Station Engineer")
 */
 //The above is a direct copy of the core info from the _vr file
+/datum/gear/fluff
+	path = /obj/item/weapon/card/id/gold/captain/spare
+	sort_category = "Fluff Items"
+	display_name = "Captain's Spare ID"
+	ckeywhitelist = list("norsvenska")
+	cost = 0
