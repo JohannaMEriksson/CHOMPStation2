@@ -1,4 +1,4 @@
 author: "Kashargul"
 delete-after: True
 changes:
-  - bugfix: "adminjump"
+  - code_imp: "reduces logging"
