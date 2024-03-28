@@ -1,4 +1,4 @@
 author: "Kashargul"
 delete-after: True
 changes:
-  - code_imp: "reduces logging"
+  - bugfix: "missing target in a balloon alert"

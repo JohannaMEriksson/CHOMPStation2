@@ -252,3 +252,42 @@
       object you try to put in disposal bins explode
   TheCaramelion:
   - bugfix: Borg pounce changed to stun
+2024-03-25:
+  Kashargul:
+  - code_imp: reduces logging
+  - bugfix: dark_maws now dispel properly and have their references cleared
+  - bugfix: dark_maw can no longer be used without costing energy
+  Raeschen:
+  - rscadd: Ghost-follow glides with the target
+  cadyn:
+  - rscadd: TGPanel (cred Selis for port)
+2024-03-26:
+  Kashargul:
+  - bugfix: mecha turret targeting
+  Raeschen:
+  - bugfix: pulsar runtime
+  - bugfix: attempt to fix some ref sources in mob/living and mob/observer/eye
+  - bugfix: broodspiders hard del
+  cadyn:
+  - refactor: refactored orbit code to be less horrible
+  - bugfix: protean powers not showing up when blob form
+2024-03-28:
+  Kashargul:
+  - bugfix: a lot of non rendered icons, especially atmos icons.
+  - bugfix: changing force south to living only due to multiple issues
+  - bugfix: misc panel updating every tick
+  - bugfix: shadekin simple_mob button texts not respecting energy
+  - bugfix: wrong pathing in tgfont, thanks to @cadyn for pointing it out
+  - bugfix: borg chat icons
+  - rscdel: dangerous calls inside the statpanel
+  TheCaramelion:
+  - rscadd: Re-Enabled Aurora Caelus and Space Dust event
+  - rscadd: Two new Ion Laws
+  - rscdel: Commented out a weird ion law
+  TheGreatKitsune:
+  - rscadd: Catslug is now an option on the basic metamorph raygun
+  Virgo113:
+  - sound: New jukebox song
+  cadyn:
+  - bugfix: asset issues that broke chat tags
+  - code_imp: play_sound and porta_turret optimizations
