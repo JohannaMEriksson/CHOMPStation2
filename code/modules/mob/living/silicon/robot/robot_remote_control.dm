@@ -6,6 +6,7 @@ GLOBAL_LIST_EMPTY(available_ai_shells)
 	var/shell = FALSE
 	var/deployed = FALSE
 	var/mob/living/silicon/ai/mainframe = null
+	var/first_transfer = TRUE
 
 // Premade AI shell, for roundstart shells.
 /mob/living/silicon/robot/ai_shell/Initialize()
@@ -46,7 +47,7 @@ GLOBAL_LIST_EMPTY(available_ai_shells)
 /mob/living/silicon/robot/proc/transfer_shell(var/mob/living/silicon/robot/target)
 	var/mob/living/silicon/ai/AI = mainframe
 	//relay AI
-	if(!config.allow_ai_shells)
+	if(!CONFIG_GET(flag/allow_ai_shells)) // CHOMPEdit
 		to_chat(src, span("warning", "AI Shells are not allowed on this server. You shouldn't have this verb because of it, so consider making a bug report."))
 		return
 
@@ -115,6 +116,12 @@ GLOBAL_LIST_EMPTY(available_ai_shells)
 		if(src.client) //CHOMPADDITION: Resize shell based on our preffered size
 			target.resize(src.client.prefs.size_multiplier) //CHOMPADDITION: Resize shell based on our preffered size
 		mind.transfer_to(target)
+		if(target.first_transfer)
+			target.first_transfer = FALSE
+			target.copy_from_prefs_vr()
+			if(LAZYLEN(target.vore_organs))
+				target.vore_selected = target.vore_organs[1]
+		src.copy_vore_prefs_to_mob(target)
 		AI.teleop = target // So the AI 'hears' messages near its core.
 		target.post_deploy()
 //CHOMPADDITION END
@@ -175,6 +182,7 @@ GLOBAL_LIST_EMPTY(available_ai_shells)
 	if(message)
 		to_chat(src, span("notice", message))
 	mind.transfer_to(mainframe)
+	src.copy_vore_prefs_to_mob(mainframe)
 	deployed = FALSE
 	update_icon()
 	mainframe.teleop = null
@@ -199,7 +207,7 @@ GLOBAL_LIST_EMPTY(available_ai_shells)
 	undeploy("Remote session terminated.")
 
 /mob/living/silicon/robot/attack_ai(mob/user)
-	if(shell && config.allow_ai_shells && (!connected_ai || connected_ai == user))
+	if(shell && CONFIG_GET(flag/allow_ai_shells) && (!connected_ai || connected_ai == user)) // CHOMPEdit
 		var/mob/living/silicon/ai/AI = user
 		if(istype(AI))		// Just in case we're clicked by a borg
 			AI.deploy_to_shell(src)
@@ -216,6 +224,6 @@ GLOBAL_LIST_EMPTY(available_ai_shells)
 	delete_me = TRUE
 
 /obj/effect/landmark/free_ai_shell/Initialize()
-	if(config.allow_ai_shells && config.give_free_ai_shell)
+	if(CONFIG_GET(flag/allow_ai_shells) && CONFIG_GET(flag/give_free_ai_shell)) // CHOMPEdit
 		new /mob/living/silicon/robot/ai_shell(get_turf(src))
 	return ..()

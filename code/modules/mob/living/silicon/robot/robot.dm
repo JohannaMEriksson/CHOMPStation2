@@ -66,6 +66,9 @@
 	var/sleeper_state = 0 // 0 for empty, 1 for normal, 2 for mediborg-healthy
 	var/scrubbing = FALSE //Floor cleaning enabled
 
+	// Subtype limited modules or admin restrictions
+	var/list/restrict_modules_to = list()
+
 	// Components are basically robot organs.
 	var/list/components = list()
 
@@ -117,6 +120,7 @@
 	)
 
 	var/has_recoloured = FALSE
+	var/vtec_active = FALSE
 
 /mob/living/silicon/robot/New(loc, var/unfinished = 0)
 	spark_system = new /datum/effect/effect/system/spark_spread()
@@ -327,22 +331,27 @@
 	var/list/modules = list()
 	//VOREStatation Edit Start: shell restrictions //CHOMPstaton change to blacklist
 	if(shell)
-		modules.Add(robot_module_types)
-		modules.Remove(GLOB.shell_module_blacklist) // CHOMPEdit - Managed Globals
-		//CHOMPedit Add
-		if(crisis || security_level == SEC_LEVEL_RED || crisis_override)
-			to_chat(src, span_red("Crisis mode active. Combat module available."))
-			modules+="Combat"
-			modules+="ERT"
+		if(restrict_modules_to.len > 0)
+			modules.Add(restrict_modules_to)
+		else
+			modules.Add(robot_module_types)
+			modules.Remove(GLOB.shell_module_blacklist) // CHOMPEdit - Managed Globals
+			//CHOMPedit Add
+			if(crisis || security_level == SEC_LEVEL_RED || crisis_override)
+				to_chat(src, span_red("Crisis mode active. Combat module available."))
+				modules |= emergency_module_types
 			//CHOMPedit end
 	else
-		modules.Add(robot_module_types)
-		if(crisis || security_level == SEC_LEVEL_RED || crisis_override)
-			to_chat(src, span_red("Crisis mode active. Combat module available."))
-			modules |= emergency_module_types
-		for(var/module_name in whitelisted_module_types)
-			if(is_borg_whitelisted(src, module_name))
-				modules |= module_name
+		if(restrict_modules_to.len > 0)
+			modules.Add(restrict_modules_to)
+		else
+			modules.Add(robot_module_types)
+			if(crisis || security_level == SEC_LEVEL_RED || crisis_override)
+				to_chat(src, span_red("Crisis mode active. Combat module available."))
+				modules |= emergency_module_types
+			for(var/module_name in whitelisted_module_types)
+				if(is_borg_whitelisted(src, module_name))
+					modules |= module_name
 	//VOREStatation Edit End: shell restrictions
 	modtype = tgui_input_list(usr, "Please, select a module!", "Robot module", modules)
 
@@ -541,12 +550,9 @@
 /mob/living/silicon/robot/proc/toggle_vtec()
 	set name = "Toggle VTEC"
 	set category = "Abilities"
-	if(speed == -1)
-		to_chat(src, "<span class='filter_notice'>VTEC module disabled.</span>")
-		speed = 0
-	else
-		to_chat(src, "<span class='filter_notice'>VTEC module enabled.</span>")
-		speed = -1
+	vtec_active = !vtec_active
+	hud_used.toggle_vtec_control()
+	to_chat(src, "<span class='filter_notice'>VTEC module [vtec_active  ? "enabled" : "disabled"].</span>")
 
 // update the status screen display
 /mob/living/silicon/robot/get_status_tab_items()
@@ -1313,6 +1319,8 @@
 	icon_selected = 1
 	icon_selection_tries = 0
 	sprite_type = robot_species
+	if(hands)
+		update_hud()
 	to_chat(src, "<span class='filter_notice'>Your icon has been set. You now require a module reset to change it.</span>")
 
 /mob/living/silicon/robot/proc/set_default_module_icon()
@@ -1333,13 +1341,13 @@
 /mob/living/silicon/robot/proc/add_robot_verbs()
 	add_verb(src,robot_verbs_default) //CHOMPEdit TGPanel
 	add_verb(src,silicon_subsystems) //CHOMPEdit TGPanel
-	if(config.allow_robot_recolor)
+	if(CONFIG_GET(flag/allow_robot_recolor)) // CHOMPEdit
 		add_verb(src,/mob/living/silicon/robot/proc/ColorMate) //CHOMPEdit TGPanel
 
 /mob/living/silicon/robot/proc/remove_robot_verbs()
 	remove_verb(src,robot_verbs_default)  //CHOMPEdit
 	remove_verb(src,silicon_subsystems)  //CHOMPEdit
-	if(config.allow_robot_recolor)
+	if(CONFIG_GET(flag/allow_robot_recolor)) // CHOMPEdit
 		remove_verb(src,/mob/living/silicon/robot/proc/ColorMate ) //ChompEDIT - probable copypaste error //CHOMPEdit
 
 // Uses power from cyborg's cell. Returns 1 on success or 0 on failure.
