@@ -404,3 +404,20 @@
 	..()
 	for(var/i = 0 to 7)
 		new /obj/item/weapon/disk/nifsoft/sizechange(src)
+
+// Debug Disk //
+/obj/item/weapon/disk/nifsoft/admin
+	name = "NIFSoft Uploader - Administrator"
+	desc = "Contains free NIFSofts useful for administrative personnel.\n\
+	It has a small label: \n\
+	\"Portable NIFSoft Installation Media. \n\
+	Align ocular port with eye socket and depress red plunger.\""
+
+	stored_organic = /datum/nifsoft/package/admin
+	stored_synthetic = /datum/nifsoft/package/admin_synth
+
+/datum/nifsoft/package/admin
+	software = list(/datum/nifsoft/ar_omni,/datum/nifsoft/uvblocker,/datum/nifsoft/flashprot,/datum/nifsoft/mesons,/datum/nifsoft/material,/datum/nifsoft/thermals,/datum/nifsoft/nightvis,/datum/nifsoft/medichines_org,/datum/nifsoft/spare_breath,/datum/nifsoft/crewmonitor,/datum/nifsoft/alarmmonitor,/datum/nifsoft/brute_armor,/datum/nifsoft/burn_armor)
+
+/datum/nifsoft/package/admin_synth
+	software = list(/datum/nifsoft/ar_omni,/datum/nifsoft/uvblocker,/datum/nifsoft/flashprot,/datum/nifsoft/mesons,/datum/nifsoft/material,/datum/nifsoft/thermals,/datum/nifsoft/nightvis,/datum/nifsoft/medichines_syn,/datum/nifsoft/crewmonitor,/datum/nifsoft/alarmmonitor,/datum/nifsoft/apc_recharge,/datum/nifsoft/pressure,/datum/nifsoft/heatsinks)
