@@ -6,7 +6,8 @@
 	returns_home = FALSE
 
 /mob/living/carbon/human/ai_controlled/job/Initialize()
-	gender = pick(list(MALE, FEMALE))
+//	gender = pick(list(MALE, FEMALE))
+	gender = FEMALE
 	if(gender == MALE)
 		to_wear_hair = pick(list("Antonio", "Average Joe", "Bald", "Bedhead", "Bedhead 2", "Bedhead 3", "Bieber", "Business Hair", "Business Hair 2", "Business Hair 3", "Business Hair 4", "Buzzcut", "CIA", "Coffee House Cut", "Combover", "Crewcut", "Cut Hair", "Darcy", "Dave", "Dirk", "Emo", "Emo Alt", "Emo Fringe", "Emo Half-Shaved", "Emo Half-Shaved Long", "Emo Mid-length", "Father", "Feather", "Flipped", "Flow Hair", "Gamzee", "Gelled Back", "Half-banged Hair", "Half-banged Hair Alt", "Jensen", "Joestar", "Keanu Hair", "Long Hair Shoulder-length", "Manbun", "Miles Hair", "Mulder", "Nepeta", "Oxton", "Overeye Very Short, Alternate", "Overeye Very Short", "Parted", "Parted Alt", "Pixie Cut", "Pompadour", "Pompadour Dandy", "Poofy", "Poofy 2", "Proper", "Quiff", "Regulation Cut", "Ronin", "Rosa", "Roxy", "Sabitsuki", "Scully", "Shaved Hair", "Short Bangs", "Short Flip", "Short Hair", "Short Hair 2", "Short Hair 3", "Shoulder-length Messy", "Side Undercut", "Skinhead", "Sleeze", "Slightly Long", "Spiky", "Suave", "Suave 2", "Sweep Shave", "Terezi", "Thinning", "Slicker"))
 		if(prob(10))
