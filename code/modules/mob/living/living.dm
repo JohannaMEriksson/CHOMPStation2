@@ -100,7 +100,7 @@
 
 /mob/living/verb/succumb()
 	set name = "Succumb to death"
-	set category = "IC"
+	set category = "IC.Game" //CHOMPEdit
 	set desc = "Press this button if you are in crit and wish to die. Use this sparingly (ending a scene, no medical, etc.)"
 	var/confirm1 = tgui_alert(usr, "Pressing this button will kill you instantenously! Are you sure you wish to proceed?", "Confirm wish to succumb", list("No","Yes"))
 	var/confirm2 = "No"
@@ -116,6 +116,19 @@
 			to_chat(src, span_blue("You chose to live another day."))
 		else
 			to_chat(src, span_blue("You are not injured enough to succumb to death!"))
+
+/mob/living/verb/toggle_afk()
+	set name = "Toggle AFK"
+	set category = "IC.Game" //CHOMPEdit
+	set desc = "Mark yourself as Away From Keyboard, or clear that status!"
+	if(away_from_keyboard)
+		remove_status_indicator("afk")
+		to_chat(src, "<span class='notice'>You are no longer marked as AFK.</span>")
+		away_from_keyboard = FALSE
+	else
+		add_status_indicator("afk")
+		to_chat(src, "<span class='notice'>You are now marked as AFK.</span>")
+		away_from_keyboard = TRUE
 
 /mob/living/proc/updatehealth()
 	if(status_flags & GODMODE)
@@ -713,7 +726,7 @@
 
 /mob/living/verb/Examine_OOC() //ChompEDIT - proc --> verb
 	set name = "Examine Meta-Info (OOC)"
-	set category = "OOC"
+	set category = "OOC.Game" //CHOMPEdit
 	set src in view()
 	//VOREStation Edit Start - Making it so SSD people have prefs with fallback to original style.
 	if(CONFIG_GET(flag/allow_metadata)) // CHOMPEdit
@@ -732,7 +745,7 @@
 
 /mob/living/verb/resist()
 	set name = "Resist"
-	set category = "IC"
+	set category = "IC.Game" //CHOMPEdit
 
 	if(!incapacitated(INCAPACITATION_KNOCKOUT) && (last_resist_time + RESIST_COOLDOWN < world.time))
 		last_resist_time = world.time
@@ -792,7 +805,7 @@
 
 /mob/living/verb/lay_down()
 	set name = "Rest"
-	set category = "IC"
+	set category = "IC.Game" //CHOMPEdit
 
 	resting = !resting
 	to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>")

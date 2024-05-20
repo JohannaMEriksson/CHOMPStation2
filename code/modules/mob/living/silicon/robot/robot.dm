@@ -428,7 +428,7 @@
 
 /mob/living/silicon/robot/verb/namepick()
 	set name = "Pick Name"
-	set category = "Abilities.Silicon" //ChompEDIT - TGPanel
+	set category = "Abilities.Settings" //ChompEDIT - TGPanel
 
 	if(custom_name)
 		to_chat(usr, "You can't pick another custom name. Go ask for a name change.")
@@ -446,7 +446,7 @@
 
 /mob/living/silicon/robot/verb/extra_customization()
 	set name = "Customize Appearance"
-	set category = "Abilities.Silicon" //ChompEDIT - TGPanel
+	set category = "Abilities.Settings" //ChompEDIT - TGPanel
 	set desc = "Customize your appearance (assuming your chosen sprite allows)."
 
 	if(!sprite_datum || !sprite_datum.has_extra_customization)
@@ -549,7 +549,7 @@
 // function to toggle VTEC once installed
 /mob/living/silicon/robot/proc/toggle_vtec()
 	set name = "Toggle VTEC"
-	set category = "Abilities"
+	set category = "Abilities.Silicon" //CHOMPEdit
 	vtec_active = !vtec_active
 	hud_used.toggle_vtec_control()
 	to_chat(src, "<span class='filter_notice'>VTEC module [vtec_active  ? "enabled" : "disabled"].</span>")
@@ -851,7 +851,7 @@
 
 /mob/living/silicon/robot/proc/ColorMate()
 	set name = "Recolour Module"
-	set category = "Abilities.Silicon" //ChompEDIT - TGPanel
+	set category = "Abilities.Settings" //ChompEDIT - TGPanel
 	set desc = "Allows to recolour once."
 
 	if(!has_recoloured)
@@ -970,8 +970,9 @@
 		return
 
 	cut_overlays()
-	if(typing)
-		add_overlay(typing_indicator, TRUE)
+	if(typing) //CHOMPAdd, needed as we don't have priority overlays anymore
+		add_overlay(typing_indicator, TRUE) //CHOMPAdd, needed as we don't have priority overlays anymore
+	handle_status_indicators() //CHOMPAdd, needed as we don't have priority overlays anymore
 
 	icon			= sprite_datum.sprite_icon
 	icon_state		= sprite_datum.sprite_icon_state
@@ -1548,7 +1549,7 @@
 /mob/living/silicon/robot/verb/rest_style()
 	set name = "Switch Rest Style"
 	set desc = "Select your resting pose."
-	set category = "IC"
+	set category = "IC.Settings" //CHOMPEdit
 
 	if(!sprite_datum || !sprite_datum.has_rest_sprites || sprite_datum.rest_sprite_options.len < 1)
 		to_chat(src, "<span class='notice'>Your current appearance doesn't have any resting styles!</span>")
