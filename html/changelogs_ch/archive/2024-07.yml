@@ -1,0 +1,33 @@
+2024-07-01:
+  Hunter-Dovetail:
+  - rscadd: VBOanim_gullet1
+  - rscadd: VBO_maw19
+  - bugfix: other VBOs quality and brightness
+  - bugfix: increased brightness to some layers of VBO_maw18
+  TheCaramelion:
+  - bugfix: fixed random slosh sounds happening with 0 liquids
+  tacoguy7765093:
+  - bugfix: Fixed the Venom Injection trait to work for CHOMP/.
+2024-07-04:
+  TheCaramelion:
+  - qol: Reduced the footstep volume
+  - bugfix: Footstep and slosh elements making sounds when transfering through bellies/storages
+  - bugfix: Footstep and slosh elements not applying on resleeve/cloning/in-belly
+      spawns
+  tacoguy7765093:
+  - maptweak: Diescraper's turfs should be properly indoors now
+  - maptweak: Fixed secret button not proccing.
+  - rscadd: 5 New superposed pods have been added.
+2024-07-05:
+  Razgriz1032:
+  - rscadd: Base Shadekin spawns from 3 to 5
+2024-07-06:
+  TheCaramelion:
+  - bugfix: Fixed slosh sounds playing while phased
+2024-07-16:
+  TheCaramelion:
+  - code_imp: HasProximity is now garbage collected
+  - qol: Xenochimeras now get stunned instead of weakened when reconstituting
+2024-07-18:
+  TheCaramelion:
+  - bugfix: Xenochimeras not being able to revive properly
