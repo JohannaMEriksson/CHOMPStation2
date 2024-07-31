@@ -81,6 +81,9 @@
 	preserve_item = 1
 	origin_tech = list(TECH_POWER = 6)
 
+/obj/item/weapon/cell/vepr/empproof
+	emp_proof = TRUE
+
 /obj/item/weapon/gun/energy/tommylaser
 	name = "M-2421 'Tommy-Laser'"
 	desc = "A automatic laser weapon resembling a Tommy-Gun. Designed by Cybersun Industries to be a man portable supressive fire laser weapon."

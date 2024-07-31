@@ -1,5 +1,5 @@
 /mob/living/carbon
-	gender = MALE
+	gender = FEMALE
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE // BLEH, this could be improved for transparent species and stuff! And blocks glowing eyes?!
 	var/datum/species/species //Contains icon generation and language information, set during New().
 	var/list/stomach_contents = list()
