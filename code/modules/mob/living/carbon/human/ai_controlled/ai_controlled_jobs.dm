@@ -142,6 +142,17 @@
 	to_wear_id_type = /obj/item/weapon/card/id/civilian/internal_affairs
 	to_wear_id_job = "Internal Affairs Agent"
 
+/mob/living/carbon/human/ai_controlled/job/civilian/nude
+	name = "Civilian (Nude)"
+
+	to_wear_uniform = null
+	to_wear_shoes = null
+	to_wear_back = null
+	to_wear_l_radio = null
+	to_wear_r_pocket = null
+	to_wear_id_type = null
+	to_wear_id_job = null
+
 /mob/living/carbon/human/ai_controlled/job/service
 	name = "Service - DO NOT USE"
 	to_wear_l_radio = /obj/item/device/radio/headset/headset_service
@@ -358,13 +369,40 @@
 
 	to_wear_glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	to_wear_l_radio = /obj/item/device/radio/headset/headset_sec
-	to_wear_uniform = /obj/item/clothing/under/rank/security
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_red
 	to_wear_gloves = /obj/item/clothing/gloves/black
 	to_wear_shoes = /obj/item/clothing/shoes/boots/jackboots
 	to_wear_r_pocket = /obj/item/device/pda/security
 	to_wear_back = /obj/item/weapon/storage/backpack/satchel/sec
 	to_wear_id_type = /obj/item/weapon/card/id/security
 	to_wear_id_job = "Security Officer"
+
+/mob/living/carbon/human/ai_controlled/job/security/gear
+	name = "Security Officer (With Gear)"
+
+	to_wear_l_radio = /obj/item/device/radio/headset/headset_sec/alt
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_red
+	to_wear_suit = /obj/item/clothing/suit/armor/bulletproof/alt
+	to_wear_helmet = /obj/item/clothing/head/helmet/bulletproof
+	to_wear_belt = /obj/item/weapon/storage/belt/security
+	to_wear_r_hand = /obj/item/weapon/gun/projectile/sec
+
+/mob/living/carbon/human/ai_controlled/job/security/gear/blue
+	name = "Security Officer (With Gear, Blue)"
+
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_blue
+	to_wear_r_hand = /obj/item/weapon/gun/projectile/sec/wood
+
+/mob/living/carbon/human/ai_controlled/job/security/gear/riot
+	name = "Security Officer (With Gear, Riot)"
+
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_gorka
+	to_wear_suit = /obj/item/clothing/suit/armor/riot
+	to_wear_helmet = /obj/item/clothing/head/helmet/riot
+	to_wear_belt = /obj/item/weapon/storage/belt/security/tactical
+	to_wear_r_hand = /obj/item/weapon/gun/projectile/shotgun/pump
+	to_wear_shoes = /obj/item/clothing/shoes/leg_guard/riot
+	to_wear_gloves = /obj/item/clothing/gloves/arm_guard/riot
 
 /mob/living/carbon/human/ai_controlled/job/security/detective
 	name = "Detective"
