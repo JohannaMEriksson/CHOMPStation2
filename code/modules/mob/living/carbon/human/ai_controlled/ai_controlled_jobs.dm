@@ -587,7 +587,7 @@
 	to_wear_r_pocket = null
 	to_wear_back = /obj/item/weapon/storage/backpack
 	to_wear_id_type = /obj/item/weapon/card/id/syndicate/officer
-	to_wear_id_job = "Mercenary"
+	to_wear_id_job = "Mercenary Officer"
 
 	to_wear_l_hand = null
 	to_wear_r_hand = /obj/item/weapon/gun/projectile/revolver/mateba
