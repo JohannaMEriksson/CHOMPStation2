@@ -368,7 +368,7 @@
 	name = "Security Officer"
 
 	to_wear_glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_sec
+	to_wear_l_radio = /obj/item/device/radio/headset/headset_sec/alt
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_red
 	to_wear_gloves = /obj/item/clothing/gloves/black
 	to_wear_shoes = /obj/item/clothing/shoes/boots/jackboots
@@ -380,7 +380,6 @@
 /mob/living/carbon/human/ai_controlled/job/security/gear
 	name = "Security Officer (With Gear)"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_sec/alt
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_red
 	to_wear_suit = /obj/item/clothing/suit/armor/bulletproof/alt
 	to_wear_helmet = /obj/item/clothing/head/helmet/bulletproof
@@ -421,16 +420,23 @@
 /mob/living/carbon/human/ai_controlled/job/security/warden
 	name = "Warden"
 
-	to_wear_uniform = /obj/item/clothing/under/rank/warden
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_warden_red
 	to_wear_r_pocket = /obj/item/device/pda/warden
 	to_wear_id_type = /obj/item/weapon/card/id/security/warden
 	to_wear_id_job = "Warden"
 
+/mob/living/carbon/human/ai_controlled/job/security/warden/blue
+	name = "Warden (Blue)"
+
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_warden_blue
+	to_wear_suit = /obj/item/clothing/suit/storage/vest/wardencoat/neo_bluewarden
+	to_wear_r_hand = /obj/item/weapon/gun/projectile/deagle
+
 /mob/living/carbon/human/ai_controlled/job/security/hos
 	name = "Head of Security"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/heads/hos
-	to_wear_uniform = /obj/item/clothing/under/rank/head_of_security
+	to_wear_l_radio = /obj/item/device/radio/headset/heads/hos/alt
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_hos_red
 	to_wear_r_pocket = /obj/item/device/pda/heads/hos
 	to_wear_id_type = /obj/item/weapon/card/id/security/head
 	to_wear_id_job = "Head of Security"
@@ -539,3 +545,49 @@
 	to_wear_r_pocket = /obj/item/device/pda/heads/cmo
 	to_wear_id_type = /obj/item/weapon/card/id/medical/head
 	to_wear_id_job = "Chief Medical Officer"
+
+/mob/living/carbon/human/ai_controlled/job/mercenary
+	name = "Mercenary"
+
+	ai_holder_type = /datum/ai_holder/simple_mob/humanoid/hostile
+
+	to_wear_helmet = null
+	to_wear_glasses = null
+	to_wear_mask = null
+	to_wear_l_radio = /obj/item/device/radio/headset/syndicate/alt
+	to_wear_r_radio = null
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_suspect_turtleneck
+	to_wear_suit = /obj/item/clothing/suit/armor/bulletproof/alt
+	to_wear_gloves = /obj/item/clothing/gloves/swat
+	to_wear_shoes = /obj/item/clothing/shoes/boots/swat
+	to_wear_belt = null
+	to_wear_l_pocket = null
+	to_wear_r_pocket = null
+	to_wear_back = /obj/item/weapon/storage/backpack
+	to_wear_id_type = /obj/item/weapon/card/id/syndicate
+	to_wear_id_job = "Mercenary"
+
+	to_wear_l_hand = null
+	to_wear_r_hand = /obj/item/weapon/gun/projectile/p92x
+
+/mob/living/carbon/human/ai_controlled/job/mercenary/officer
+	name = "Mercenary Officer"
+
+	to_wear_helmet = /obj/item/clothing/head/beret/sec/gov
+	to_wear_glasses = /obj/item/clothing/glasses/sunglasses/sechud/aviator
+	to_wear_mask = null
+	to_wear_l_radio = /obj/item/device/radio/headset/syndicate/alt
+	to_wear_r_radio = null
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_suspicious_turtleneck
+	to_wear_suit = /obj/item/clothing/suit/armor/bulletproof/alt
+	to_wear_gloves = /obj/item/clothing/gloves/swat
+	to_wear_shoes = /obj/item/clothing/shoes/boots/swat
+	to_wear_belt = null
+	to_wear_l_pocket = null
+	to_wear_r_pocket = null
+	to_wear_back = /obj/item/weapon/storage/backpack
+	to_wear_id_type = /obj/item/weapon/card/id/syndicate/officer
+	to_wear_id_job = "Mercenary"
+
+	to_wear_l_hand = null
+	to_wear_r_hand = /obj/item/weapon/gun/projectile/revolver/mateba
