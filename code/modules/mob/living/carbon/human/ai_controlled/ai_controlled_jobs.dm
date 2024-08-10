@@ -109,6 +109,50 @@
 	to_wear_l_hand = null
 	to_wear_r_hand = null
 
+	can_be_drop_prey = TRUE
+	allow_spontaneous_tf = TRUE
+	receive_reagents = TRUE
+	belly_size_multiplier = 3
+	vore_sprite_multiply = list("stomach" = TRUE, "taur belly" = FALSE)
+	vore_sprite_color = list("stomach" = "#eeceb3", "taur belly" = "#000")
+
+/mob/living/carbon/human/ai_controlled/job/init_vore()
+
+	var/obj/belly/B = new /obj/belly(src)
+	vore_selected = B
+	B.immutable = 1
+	B.affects_vore_sprites = TRUE
+	B.name = "stomach"
+	B.desc = "Your surroundings are warm, soft, and slimy. Makes sense, considering you're inside \the [name]."
+	B.digest_mode = DM_HOLD
+	B.item_digest_mode = IM_DIGEST_PARALLEL
+	B.escapable = TRUE
+	B.escapechance = 25
+	B.escapechance_absorbed = 1
+	B.digestchance = 10
+	B.fancy_vore = TRUE
+	B.vore_verb = "swallow"
+	B.emote_lists[DM_HOLD] = list(
+		"The insides knead at you gently for a moment.",
+		"The guts glorp wetly around you as some air shifts.",
+		"The predator takes a deep breath and sighs, shifting you somewhat.",
+		"The stomach squeezes you tight for a moment, then relaxes harmlessly.",
+		"The predator's calm breathing and thumping heartbeat pulses around you.",
+		"The warm walls kneads harmlessly against you.",
+		"The liquids churn around you, though there doesn't seem to be much effect.",
+		"The sound of bodily movements drown out everything for a moment.",
+		"The predator's movements gently force you into a different position.")
+	B.emote_lists[DM_DIGEST] = list(
+		"The burning acids eat away at your form.",
+		"The muscular stomach flesh grinds harshly against you.",
+		"The caustic air stings your chest when you try to breathe.",
+		"The slimy guts squeeze inward to help the digestive juices soften you up.",
+		"The onslaught against your body doesn't seem to be letting up; you're food now.",
+		"The predator's body ripples and crushes against you as digestive enzymes pull you apart.",
+		"The juices pooling beneath you sizzle against your sore skin.",
+		"The churning walls slowly pulverize you into meaty nutrients.",
+		"The stomach glorps and gurgles as it tries to work you into slop.")
+
 //////////////
 // SUBTYPES //
 //////////////
