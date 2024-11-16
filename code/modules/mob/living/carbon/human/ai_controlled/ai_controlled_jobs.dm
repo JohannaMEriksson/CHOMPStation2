@@ -199,7 +199,7 @@
 
 /mob/living/carbon/human/ai_controlled/job/service
 	name = "Service - DO NOT USE"
-	to_wear_l_radio = /obj/item/radio/headset/headset_service
+	to_wear_l_radio = /obj/item/radio/headset/service
 	to_wear_id_type = /obj/item/card/id/civilian/service
 	to_wear_id_job = "Server"
 
@@ -258,7 +258,7 @@
 	name = "Pilot"
 
 	to_wear_glasses = /obj/item/clothing/glasses/fakesunglasses/aviator
-	to_wear_l_radio = /obj/item/radio/headset/pilot/alt
+	to_wear_l_radio = /obj/item/radio/headset/alt/pilot
 	to_wear_uniform = /obj/item/clothing/under/rank/pilot1/no_webbing
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/bomber/pilot
 	to_wear_gloves = /obj/item/clothing/gloves/fingerless
@@ -289,7 +289,7 @@
 /mob/living/carbon/human/ai_controlled/job/supply
 	name = "Cargo Technician"
 
-	to_wear_l_radio = /obj/item/radio/headset/headset_cargo
+	to_wear_l_radio = /obj/item/radio/headset/cargo
 	to_wear_uniform = /obj/item/clothing/under/rank/cargotech
 	to_wear_r_pocket = /obj/item/pda/cargo
 	to_wear_id_type = /obj/item/card/id/cargo
@@ -306,7 +306,7 @@
 /mob/living/carbon/human/ai_controlled/job/supply/mining
 	name = "Shaft Miner"
 
-	to_wear_l_radio = /obj/item/radio/headset/headset_mine
+	to_wear_l_radio = /obj/item/radio/headset/miner
 	to_wear_uniform = /obj/item/clothing/under/rank/miner
 	to_wear_belt = /obj/item/storage/bag/ore
 	to_wear_r_pocket = /obj/item/pda/shaftminer
@@ -318,7 +318,7 @@
 	name = "Quartermaster"
 
 	to_wear_glasses = /obj/item/clothing/glasses/sunglasses
-	to_wear_l_radio = /obj/item/radio/headset/headset_qm
+	to_wear_l_radio = /obj/item/radio/headset/qm
 	to_wear_uniform = /obj/item/clothing/under/rank/cargo
 	to_wear_shoes = /obj/item/clothing/shoes/brown
 	to_wear_r_pocket = /obj/item/pda/quartermaster
@@ -412,7 +412,7 @@
 	name = "Security Officer"
 
 	to_wear_glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	to_wear_l_radio = /obj/item/radio/headset/headset_sec/alt
+	to_wear_l_radio = /obj/item/radio/headset/alt/headset_sec
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_red
 	to_wear_gloves = /obj/item/clothing/gloves/black
 	to_wear_shoes = /obj/item/clothing/shoes/boots/jackboots
@@ -479,7 +479,7 @@
 /mob/living/carbon/human/ai_controlled/job/security/hos
 	name = "Head of Security"
 
-	to_wear_l_radio = /obj/item/radio/headset/heads/hos/alt
+	to_wear_l_radio = /obj/item/radio/headset/alt/heads/hos
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_hos_red
 	to_wear_r_pocket = /obj/item/pda/heads/hos
 	to_wear_id_type = /obj/item/card/id/security/head
@@ -598,7 +598,7 @@
 	to_wear_helmet = null
 	to_wear_glasses = null
 	to_wear_mask = null
-	to_wear_l_radio = /obj/item/radio/headset/syndicate/alt
+	to_wear_l_radio = /obj/item/radio/headset/alt/syndicate
 	to_wear_r_radio = null
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_suspect_turtleneck
 	to_wear_suit = /obj/item/clothing/suit/armor/bulletproof/alt
@@ -620,7 +620,7 @@
 	to_wear_helmet = /obj/item/clothing/head/beret/sec/gov
 	to_wear_glasses = /obj/item/clothing/glasses/sunglasses/sechud/aviator
 	to_wear_mask = null
-	to_wear_l_radio = /obj/item/radio/headset/syndicate/alt
+	to_wear_l_radio = /obj/item/radio/headset/alt/syndicate
 	to_wear_r_radio = null
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_suspicious_turtleneck
 	to_wear_suit = /obj/item/clothing/suit/armor/bulletproof/alt
