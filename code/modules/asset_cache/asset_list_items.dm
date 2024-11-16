@@ -356,11 +356,15 @@
 
 		// I really don't like the fact that I have to do this, but what the hell else *can* I do to make all of these
 		// random special items work?
-		if(ispath(item, /obj/item/weapon/reagent_containers/food/drinks/glass2) && !ispath(item, /obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask))
-			var/obj/item/weapon/reagent_containers/food/drinks/glass2/G = item
+		if(ispath(item, /obj/item/reagent_containers/food/drinks/glass2) && !ispath(item, /obj/item/reagent_containers/food/drinks/glass2/fitnessflask))
+			var/obj/item/reagent_containers/food/drinks/glass2/G = item
 			icon_state = initial(G.base_icon)
-		if(ispath(item, /obj/item/weapon/reagent_containers/hypospray/autoinjector))
+		if(ispath(item, /obj/item/reagent_containers/hypospray/autoinjector))
 			icon_state += "0"
+		//CHOMPadd start
+		if(ispath(item, /obj/item/melee/shock_maul))
+			icon_state += "0"
+		//CHOMPadd end
 
 		var/icon/I
 
@@ -480,5 +484,15 @@
 		"southern_cross_nanomap_z9.png"		= 'icons/_nanomaps/southern_cross_nanomap_z9.png',
 		"southern_cross_nanomap_z10.png"		= 'icons/_nanomaps/southern_cross_nanomap_z10.png',
 		"southern_cross_nanomap_z11.png"		= 'icons/_nanomaps/southern_cross_nanomap_z11.png',
+
+		"soluna_nexus_nanomap_z1.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z1.png',
+		"soluna_nexus_nanomap_z2.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z2.png',
+		"soluna_nexus_nanomap_z3.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z3.png',
+		"soluna_nexus_nanomap_z4.png"		= 'icons/_nanomaps/southern_cross_nanomap_z5.png',
+		"soluna_nexus_nanomap_z5.png"		= 'icons/_nanomaps/southern_cross_nanomap_z6.png',
+		"soluna_nexus_nanomap_z6.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z6.png',
+		"soluna_nexus_nanomap_z7.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z7.png',
+		"soluna_nexus_nanomap_z8.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z8.png',
+		"soluna_nexus_nanomap_z9.png"		= 'icons/_nanomaps/southern_cross_nanomap_z10.png',
 		// CHOMP Edit End
 	)

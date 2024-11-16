@@ -93,7 +93,7 @@
 	to_wear_helmet = null
 	to_wear_glasses = null
 	to_wear_mask = null
-	to_wear_l_radio = /obj/item/device/radio/headset
+	to_wear_l_radio = /obj/item/radio/headset
 	to_wear_r_radio = null
 	to_wear_uniform = /obj/item/clothing/under/color/grey
 	to_wear_suit = null
@@ -101,9 +101,9 @@
 	to_wear_shoes = /obj/item/clothing/shoes/black
 	to_wear_belt = null
 	to_wear_l_pocket = null
-	to_wear_r_pocket = /obj/item/device/pda
-	to_wear_back = /obj/item/weapon/storage/backpack
-	to_wear_id_type = /obj/item/weapon/card/id
+	to_wear_r_pocket = /obj/item/pda
+	to_wear_back = /obj/item/storage/backpack
+	to_wear_id_type = /obj/item/card/id
 	to_wear_id_job = "Assistant"
 
 	to_wear_l_hand = null
@@ -162,28 +162,28 @@
 
 	to_wear_uniform = /obj/item/clothing/under/assistantformal
 	to_wear_shoes = /obj/item/clothing/shoes/laceup
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel
-	to_wear_id_type = /obj/item/weapon/card/id/civilian
+	to_wear_back = /obj/item/storage/backpack/satchel
+	to_wear_id_type = /obj/item/card/id/civilian
 	to_wear_id_job = "Visitor"
 
 /mob/living/carbon/human/ai_controlled/job/civilian/chaplain
 	name = "Chaplain"
 
 	to_wear_uniform = /obj/item/clothing/under/rank/chaplain
-	to_wear_r_pocket = /obj/item/device/pda/chaplain
-	to_wear_id_type = /obj/item/weapon/card/id/civilian/chaplain
+	to_wear_r_pocket = /obj/item/pda/chaplain
+	to_wear_id_type = /obj/item/card/id/civilian/chaplain
 	to_wear_id_job = "Chaplain"
 
 /mob/living/carbon/human/ai_controlled/job/civilian/internal_affairs_agent
 	name = "Internal Affairs Agent"
 
 	to_wear_glasses = /obj/item/clothing/glasses/sunglasses/big
-	to_wear_l_radio = /obj/item/device/radio/headset/ia
+	to_wear_l_radio = /obj/item/radio/headset/ia
 	to_wear_uniform = /obj/item/clothing/under/rank/internalaffairs
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/internalaffairs
 	to_wear_shoes = /obj/item/clothing/shoes/laceup/brown
-	to_wear_r_pocket = /obj/item/device/pda/lawyer
-	to_wear_id_type = /obj/item/weapon/card/id/civilian/internal_affairs
+	to_wear_r_pocket = /obj/item/pda/lawyer
+	to_wear_id_type = /obj/item/card/id/civilian/internal_affairs
 	to_wear_id_job = "Internal Affairs Agent"
 
 /mob/living/carbon/human/ai_controlled/job/civilian/nude
@@ -199,8 +199,8 @@
 
 /mob/living/carbon/human/ai_controlled/job/service
 	name = "Service - DO NOT USE"
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_service
-	to_wear_id_type = /obj/item/weapon/card/id/civilian/service
+	to_wear_l_radio = /obj/item/radio/headset/headset_service
+	to_wear_id_type = /obj/item/card/id/civilian/service
 	to_wear_id_job = "Server"
 
 /mob/living/carbon/human/ai_controlled/job/service/botanist
@@ -210,18 +210,18 @@
 	to_wear_suit = /obj/item/clothing/suit/storage/apron
 	to_wear_gloves = /obj/item/clothing/gloves/botanic_leather
 	to_wear_shoes = /obj/item/clothing/shoes/brown
-	to_wear_l_pocket = /obj/item/device/analyzer/plant_analyzer
-	to_wear_r_pocket = /obj/item/device/pda/botanist
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel/hyd
-	to_wear_id_type = /obj/item/weapon/card/id/civilian/service/botanist
+	to_wear_l_pocket = /obj/item/analyzer/plant_analyzer
+	to_wear_r_pocket = /obj/item/pda/botanist
+	to_wear_back = /obj/item/storage/backpack/satchel/hyd
+	to_wear_id_type = /obj/item/card/id/civilian/service/botanist
 	to_wear_id_job = "Botanist"
 
 /mob/living/carbon/human/ai_controlled/job/service/bartender
 	name = "Bartender"
 
 	to_wear_uniform = /obj/item/clothing/under/rank/bartender
-	to_wear_r_pocket = /obj/item/device/pda/bar
-	to_wear_id_type = /obj/item/weapon/card/id/civilian/service/bartender
+	to_wear_r_pocket = /obj/item/pda/bar
+	to_wear_id_type = /obj/item/card/id/civilian/service/bartender
 	to_wear_id_job = "Bartender"
 
 /mob/living/carbon/human/ai_controlled/job/service/chef
@@ -230,8 +230,8 @@
 	to_wear_helmet = /obj/item/clothing/head/chefhat
 	to_wear_uniform = /obj/item/clothing/under/rank/chef
 	to_wear_suit = /obj/item/clothing/suit/chef
-	to_wear_r_pocket = /obj/item/device/pda/chef
-	to_wear_id_type = /obj/item/weapon/card/id/civilian/service/chef
+	to_wear_r_pocket = /obj/item/pda/chef
+	to_wear_id_type = /obj/item/card/id/civilian/service/chef
 	to_wear_id_job = "Chef"
 
 /mob/living/carbon/human/ai_controlled/job/service/janitor
@@ -239,60 +239,60 @@
 
 	to_wear_uniform = /obj/item/clothing/under/rank/janitor
 	to_wear_shoes = /obj/item/clothing/shoes/galoshes
-	to_wear_r_pocket = /obj/item/device/pda/janitor
-	to_wear_id_type = /obj/item/weapon/card/id/civilian/service/janitor
+	to_wear_r_pocket = /obj/item/pda/janitor
+	to_wear_id_type = /obj/item/card/id/civilian/service/janitor
 	to_wear_id_job = "Janitor"
 
 /mob/living/carbon/human/ai_controlled/job/explorer
 	name = "Explorer"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/explorer
+	to_wear_l_radio = /obj/item/radio/headset/explorer
 	to_wear_uniform = /obj/item/clothing/under/explorer
 	to_wear_shoes = /obj/item/clothing/shoes/boots/winter/explorer
-	to_wear_r_pocket = /obj/item/device/pda/explorer
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel/explorer
-	to_wear_id_type = /obj/item/weapon/card/id/exploration
+	to_wear_r_pocket = /obj/item/pda/explorer
+	to_wear_back = /obj/item/storage/backpack/satchel/explorer
+	to_wear_id_type = /obj/item/card/id/exploration
 	to_wear_id_job = "Explorer"
 
 /mob/living/carbon/human/ai_controlled/job/explorer/pilot
 	name = "Pilot"
 
 	to_wear_glasses = /obj/item/clothing/glasses/fakesunglasses/aviator
-	to_wear_l_radio = /obj/item/device/radio/headset/pilot/alt
+	to_wear_l_radio = /obj/item/radio/headset/pilot/alt
 	to_wear_uniform = /obj/item/clothing/under/rank/pilot1/no_webbing
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/bomber/pilot
 	to_wear_gloves = /obj/item/clothing/gloves/fingerless
 	to_wear_shoes = /obj/item/clothing/shoes/black
-	to_wear_r_pocket = /obj/item/device/pda/pilot
-	to_wear_id_type = /obj/item/weapon/card/id/civilian/pilot
+	to_wear_r_pocket = /obj/item/pda/pilot
+	to_wear_id_type = /obj/item/card/id/civilian/pilot
 	to_wear_id_job = "Pilot"
 
 /mob/living/carbon/human/ai_controlled/job/explorer/medic
 	name = "Field Medic"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/sar
+	to_wear_l_radio = /obj/item/radio/headset/sar
 	to_wear_uniform = /obj/item/clothing/under/utility/blue
-	to_wear_belt = /obj/item/weapon/storage/belt/medical/emt
-	to_wear_r_pocket = /obj/item/device/pda/sar
-	to_wear_back = /obj/item/weapon/storage/backpack/messenger/explorer
-	to_wear_id_type = /obj/item/weapon/card/id/exploration/fm
+	to_wear_belt = /obj/item/storage/belt/medical/emt
+	to_wear_r_pocket = /obj/item/pda/sar
+	to_wear_back = /obj/item/storage/backpack/messenger/explorer
+	to_wear_id_type = /obj/item/card/id/exploration/fm
 	to_wear_id_job = "Field Medic"
 
 /mob/living/carbon/human/ai_controlled/job/explorer/pathfinder
 	name = "Pathfinder"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/pathfinder
-	to_wear_r_pocket = /obj/item/device/pda/pathfinder
-	to_wear_id_type = /obj/item/weapon/card/id/exploration/head
+	to_wear_l_radio = /obj/item/radio/headset/pathfinder
+	to_wear_r_pocket = /obj/item/pda/pathfinder
+	to_wear_id_type = /obj/item/card/id/exploration/head
 	to_wear_id_job = "Pathfinder"
 
 /mob/living/carbon/human/ai_controlled/job/supply
 	name = "Cargo Technician"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_cargo
+	to_wear_l_radio = /obj/item/radio/headset/headset_cargo
 	to_wear_uniform = /obj/item/clothing/under/rank/cargotech
-	to_wear_r_pocket = /obj/item/device/pda/cargo
-	to_wear_id_type = /obj/item/weapon/card/id/cargo
+	to_wear_r_pocket = /obj/item/pda/cargo
+	to_wear_id_type = /obj/item/card/id/cargo
 	to_wear_id_job = "Cargo Technician"
 
 /mob/living/carbon/human/ai_controlled/job/supply/mailman
@@ -300,43 +300,43 @@
 
 	to_wear_helmet = /obj/item/clothing/head/mailman2
 	to_wear_uniform = /obj/item/clothing/under/rank/mailman2
-	to_wear_belt = /obj/item/weapon/storage/bag/mail
+	to_wear_belt = /obj/item/storage/bag/mail
 	to_wear_id_job = "Mail Carrier"
 
 /mob/living/carbon/human/ai_controlled/job/supply/mining
 	name = "Shaft Miner"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_mine
+	to_wear_l_radio = /obj/item/radio/headset/headset_mine
 	to_wear_uniform = /obj/item/clothing/under/rank/miner
-	to_wear_belt = /obj/item/weapon/storage/bag/ore
-	to_wear_r_pocket = /obj/item/device/pda/shaftminer
-	to_wear_back = /obj/item/weapon/storage/backpack/industrial
-	to_wear_id_type = /obj/item/weapon/card/id/cargo/miner
+	to_wear_belt = /obj/item/storage/bag/ore
+	to_wear_r_pocket = /obj/item/pda/shaftminer
+	to_wear_back = /obj/item/storage/backpack/industrial
+	to_wear_id_type = /obj/item/card/id/cargo/miner
 	to_wear_id_job = "Shaft Miner"
 
 /mob/living/carbon/human/ai_controlled/job/supply/qm
 	name = "Quartermaster"
 
 	to_wear_glasses = /obj/item/clothing/glasses/sunglasses
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_qm
+	to_wear_l_radio = /obj/item/radio/headset/headset_qm
 	to_wear_uniform = /obj/item/clothing/under/rank/cargo
 	to_wear_shoes = /obj/item/clothing/shoes/brown
-	to_wear_r_pocket = /obj/item/device/pda/quartermaster
-	to_wear_id_type = /obj/item/weapon/card/id/cargo/head
+	to_wear_r_pocket = /obj/item/pda/quartermaster
+	to_wear_id_type = /obj/item/card/id/cargo/head
 	to_wear_id_job = "Quartermaster"
 
 /mob/living/carbon/human/ai_controlled/job/engi
 	name = "Engineer"
 
 	to_wear_helmet = /obj/item/clothing/head/hardhat
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_eng
+	to_wear_l_radio = /obj/item/radio/headset/headset_eng
 	to_wear_uniform = /obj/item/clothing/under/rank/engineer
 	to_wear_shoes = /obj/item/clothing/shoes/boots/workboots
-	to_wear_belt = /obj/item/weapon/storage/belt/utility/full/multitool
-	to_wear_l_pocket = /obj/item/device/t_scanner
-	to_wear_r_pocket = /obj/item/device/pda/engineering
-	to_wear_back = /obj/item/weapon/storage/backpack/industrial
-	to_wear_id_type = /obj/item/weapon/card/id/engineering
+	to_wear_belt = /obj/item/storage/belt/utility/full/multitool
+	to_wear_l_pocket = /obj/item/t_scanner
+	to_wear_r_pocket = /obj/item/pda/engineering
+	to_wear_back = /obj/item/storage/backpack/industrial
+	to_wear_id_type = /obj/item/card/id/engineering
 	to_wear_id_job = "Engineer"
 
 /mob/living/carbon/human/ai_controlled/job/engi/atmos
@@ -344,32 +344,32 @@
 
 	to_wear_helmet = null
 	to_wear_uniform = /obj/item/clothing/under/rank/atmospheric_technician
-	to_wear_belt = /obj/item/weapon/storage/belt/utility/atmostech
-	to_wear_r_pocket = /obj/item/device/pda/atmos
-	to_wear_id_type = /obj/item/weapon/card/id/engineering/atmos
+	to_wear_belt = /obj/item/storage/belt/utility/atmostech
+	to_wear_r_pocket = /obj/item/pda/atmos
+	to_wear_id_type = /obj/item/card/id/engineering/atmos
 	to_wear_id_job = "Atmospherics Technician"
 
 /mob/living/carbon/human/ai_controlled/job/engi/ce
 	name = "Chief Engineer"
 
 	to_wear_helmet = /obj/item/clothing/head/hardhat/white
-	to_wear_l_radio = /obj/item/device/radio/headset/heads/ce
+	to_wear_l_radio = /obj/item/radio/headset/heads/ce
 	to_wear_uniform = /obj/item/clothing/under/rank/chief_engineer
 	to_wear_gloves = /obj/item/clothing/gloves/black
-	to_wear_r_pocket = /obj/item/device/pda/heads/ce
-	to_wear_id_type = /obj/item/weapon/card/id/engineering/head
+	to_wear_r_pocket = /obj/item/pda/heads/ce
+	to_wear_id_type = /obj/item/card/id/engineering/head
 	to_wear_id_job = "Chief Engineer"
 
 /mob/living/carbon/human/ai_controlled/job/science
 	name = "Scientist"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_sci
+	to_wear_l_radio = /obj/item/radio/headset/headset_sci
 	to_wear_uniform = /obj/item/clothing/under/rank/scientist
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	to_wear_shoes = /obj/item/clothing/shoes/white
-	to_wear_r_pocket = /obj/item/device/pda/science
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel/tox
-	to_wear_id_type = /obj/item/weapon/card/id/science
+	to_wear_r_pocket = /obj/item/pda/science
+	to_wear_back = /obj/item/storage/backpack/satchel/tox
+	to_wear_id_type = /obj/item/card/id/science
 	to_wear_id_job = "Scientist"
 
 /mob/living/carbon/human/ai_controlled/job/science/roboticist
@@ -378,47 +378,47 @@
 	to_wear_uniform = /obj/item/clothing/under/rank/roboticist
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat/roboticist
 	to_wear_shoes = /obj/item/clothing/shoes/black
-	to_wear_belt = /obj/item/weapon/storage/belt/utility/full/multitool
-	to_wear_r_pocket = /obj/item/device/pda/roboticist
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel/norm
-	to_wear_id_type = /obj/item/weapon/card/id/science/roboticist
+	to_wear_belt = /obj/item/storage/belt/utility/full/multitool
+	to_wear_r_pocket = /obj/item/pda/roboticist
+	to_wear_back = /obj/item/storage/backpack/satchel/norm
+	to_wear_id_type = /obj/item/card/id/science/roboticist
 	to_wear_id_job = "Roboticist"
 
 /mob/living/carbon/human/ai_controlled/job/science/xenobiologist
 	name = "Xenobiologist"
 
-	to_wear_id_type = /obj/item/weapon/card/id/science/xenobiologist
+	to_wear_id_type = /obj/item/card/id/science/xenobiologist
 	to_wear_id_job = "Xenobiologist"
 
 /mob/living/carbon/human/ai_controlled/job/science/xenobotanist
 	name = "Xenobotanist"
 
-	to_wear_id_type = /obj/item/weapon/card/id/science/xenobotanist
+	to_wear_id_type = /obj/item/card/id/science/xenobotanist
 	to_wear_id_job = "Xenobotanist"
 
 /mob/living/carbon/human/ai_controlled/job/science/rd
 	name = "Research Director"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/heads/rd
+	to_wear_l_radio = /obj/item/radio/headset/heads/rd
 	to_wear_uniform = /obj/item/clothing/under/rank/research_director
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	to_wear_shoes = /obj/item/clothing/shoes/brown
-	to_wear_r_pocket = /obj/item/device/pda/heads/rd
-	to_wear_back = /obj/item/weapon/storage/backpack/messenger/tox
-	to_wear_id_type = /obj/item/weapon/card/id/science/head
+	to_wear_r_pocket = /obj/item/pda/heads/rd
+	to_wear_back = /obj/item/storage/backpack/messenger/tox
+	to_wear_id_type = /obj/item/card/id/science/head
 	to_wear_id_job = "Research Director"
 
 /mob/living/carbon/human/ai_controlled/job/security
 	name = "Security Officer"
 
 	to_wear_glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_sec/alt
+	to_wear_l_radio = /obj/item/radio/headset/headset_sec/alt
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_red
 	to_wear_gloves = /obj/item/clothing/gloves/black
 	to_wear_shoes = /obj/item/clothing/shoes/boots/jackboots
-	to_wear_r_pocket = /obj/item/device/pda/security
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel/sec
-	to_wear_id_type = /obj/item/weapon/card/id/security
+	to_wear_r_pocket = /obj/item/pda/security
+	to_wear_back = /obj/item/storage/backpack/satchel/sec
+	to_wear_id_type = /obj/item/card/id/security
 	to_wear_id_job = "Security Officer"
 
 /mob/living/carbon/human/ai_controlled/job/security/gear
@@ -427,14 +427,14 @@
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_red
 	to_wear_suit = /obj/item/clothing/suit/armor/bulletproof/alt
 	to_wear_helmet = /obj/item/clothing/head/helmet/bulletproof
-	to_wear_belt = /obj/item/weapon/storage/belt/security
-	to_wear_r_hand = /obj/item/weapon/gun/projectile/sec
+	to_wear_belt = /obj/item/storage/belt/security
+	to_wear_r_hand = /obj/item/gun/projectile/sec
 
 /mob/living/carbon/human/ai_controlled/job/security/gear/blue
 	name = "Security Officer (With Gear, Blue)"
 
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_blue
-	to_wear_r_hand = /obj/item/weapon/gun/projectile/sec/wood
+	to_wear_r_hand = /obj/item/gun/projectile/sec/wood
 
 /mob/living/carbon/human/ai_controlled/job/security/gear/riot
 	name = "Security Officer (With Gear, Riot)"
@@ -442,8 +442,8 @@
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_gorka
 	to_wear_suit = /obj/item/clothing/suit/armor/riot
 	to_wear_helmet = /obj/item/clothing/head/helmet/riot
-	to_wear_belt = /obj/item/weapon/storage/belt/security/tactical
-	to_wear_r_hand = /obj/item/weapon/gun/projectile/shotgun/pump
+	to_wear_belt = /obj/item/storage/belt/security/tactical
+	to_wear_r_hand = /obj/item/gun/projectile/shotgun/pump
 	to_wear_shoes = /obj/item/clothing/shoes/leg_guard/riot
 	to_wear_gloves = /obj/item/clothing/gloves/arm_guard/riot
 
@@ -455,18 +455,18 @@
 	to_wear_suit = /obj/item/clothing/suit/storage/det_trench
 	to_wear_gloves = /obj/item/clothing/gloves/forensic
 	to_wear_shoes = /obj/item/clothing/shoes/laceup
-	to_wear_l_pocket = /obj/item/weapon/flame/lighter/zippo
-	to_wear_r_pocket = /obj/item/device/pda/detective
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel/norm
-	to_wear_id_type = /obj/item/weapon/card/id/security/detective
+	to_wear_l_pocket = /obj/item/flame/lighter/zippo
+	to_wear_r_pocket = /obj/item/pda/detective
+	to_wear_back = /obj/item/storage/backpack/satchel/norm
+	to_wear_id_type = /obj/item/card/id/security/detective
 	to_wear_id_job = "Detective"
 
 /mob/living/carbon/human/ai_controlled/job/security/warden
 	name = "Warden"
 
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_warden_red
-	to_wear_r_pocket = /obj/item/device/pda/warden
-	to_wear_id_type = /obj/item/weapon/card/id/security/warden
+	to_wear_r_pocket = /obj/item/pda/warden
+	to_wear_id_type = /obj/item/card/id/security/warden
 	to_wear_id_job = "Warden"
 
 /mob/living/carbon/human/ai_controlled/job/security/warden/blue
@@ -474,28 +474,28 @@
 
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_warden_blue
 	to_wear_suit = /obj/item/clothing/suit/storage/vest/wardencoat/neo_bluewarden
-	to_wear_r_hand = /obj/item/weapon/gun/projectile/deagle
+	to_wear_r_hand = /obj/item/gun/projectile/deagle
 
 /mob/living/carbon/human/ai_controlled/job/security/hos
 	name = "Head of Security"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/heads/hos/alt
+	to_wear_l_radio = /obj/item/radio/headset/heads/hos/alt
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_hos_red
-	to_wear_r_pocket = /obj/item/device/pda/heads/hos
-	to_wear_id_type = /obj/item/weapon/card/id/security/head
+	to_wear_r_pocket = /obj/item/pda/heads/hos
+	to_wear_id_type = /obj/item/card/id/security/head
 	to_wear_id_job = "Head of Security"
 
 /mob/living/carbon/human/ai_controlled/job/medical
 	name = "Medical Doctor"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/headset_med
-	to_wear_r_radio = /obj/item/device/flashlight/pen
+	to_wear_l_radio = /obj/item/radio/headset/headset_med
+	to_wear_r_radio = /obj/item/flashlight/pen
 	to_wear_uniform = /obj/item/clothing/under/rank/medical
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	to_wear_shoes = /obj/item/clothing/shoes/white
-	to_wear_r_pocket = /obj/item/device/pda/medical
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel/med
-	to_wear_id_type = /obj/item/weapon/card/id/medical
+	to_wear_r_pocket = /obj/item/pda/medical
+	to_wear_back = /obj/item/storage/backpack/satchel/med
+	to_wear_id_type = /obj/item/card/id/medical
 	to_wear_id_job = "Medical Doctor"
 
 /mob/living/carbon/human/ai_controlled/job/medical/emergency_physician
@@ -517,8 +517,8 @@
 	to_wear_mask = /obj/item/clothing/mask/surgical
 	to_wear_uniform = /obj/item/clothing/under/rank/virologist
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat/virologist
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel/vir
-	to_wear_id_type = /obj/item/weapon/card/id/medical/virologist
+	to_wear_back = /obj/item/storage/backpack/satchel/vir
+	to_wear_id_type = /obj/item/card/id/medical/virologist
 	to_wear_id_job = "Virologist"
 
 /mob/living/carbon/human/ai_controlled/job/medical/nurse
@@ -534,9 +534,9 @@
 	to_wear_r_radio = null
 	to_wear_uniform = /obj/item/clothing/under/rank/chemist
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat/chemist
-	to_wear_r_pocket = /obj/item/device/pda/chemist
-	to_wear_back = /obj/item/weapon/storage/backpack/sport/chem
-	to_wear_id_type = /obj/item/weapon/card/id/medical/chemist
+	to_wear_r_pocket = /obj/item/pda/chemist
+	to_wear_back = /obj/item/storage/backpack/sport/chem
+	to_wear_id_type = /obj/item/card/id/medical/chemist
 	to_wear_id_job = "Chemist"
 
 /mob/living/carbon/human/ai_controlled/job/medical/geneticist
@@ -544,9 +544,9 @@
 
 	to_wear_uniform = /obj/item/clothing/under/rank/geneticist
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat/genetics
-	to_wear_r_pocket = /obj/item/device/pda/geneticist
-	to_wear_back = /obj/item/weapon/storage/backpack/satchel/gen
-	to_wear_id_type = /obj/item/weapon/card/id/medical/geneticist
+	to_wear_r_pocket = /obj/item/pda/geneticist
+	to_wear_back = /obj/item/storage/backpack/satchel/gen
+	to_wear_id_type = /obj/item/card/id/medical/geneticist
 	to_wear_id_job = "Geneticist"
 
 /mob/living/carbon/human/ai_controlled/job/medical/psychiatrist
@@ -556,7 +556,7 @@
 	to_wear_uniform = /obj/item/clothing/under/rank/psych
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	to_wear_shoes = /obj/item/clothing/shoes/laceup
-	to_wear_id_type = /obj/item/weapon/card/id/medical/psych
+	to_wear_id_type = /obj/item/card/id/medical/psych
 	to_wear_id_job = "Psychiatrist"
 
 /mob/living/carbon/human/ai_controlled/job/medical/paramedic
@@ -566,8 +566,8 @@
 	to_wear_uniform = /obj/item/clothing/under/rank/medical/paramedic
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/fr_jacket
 	to_wear_shoes = /obj/item/clothing/shoes/boots/jackboots
-	to_wear_belt = /obj/item/weapon/storage/belt/medical/emt
-	to_wear_id_type = /obj/item/weapon/card/id/medical/emt
+	to_wear_belt = /obj/item/storage/belt/medical/emt
+	to_wear_id_type = /obj/item/card/id/medical/emt
 	to_wear_id_job = "Paramedic"
 
 /mob/living/carbon/human/ai_controlled/job/medical/paramedic/emt
@@ -580,14 +580,14 @@
 /mob/living/carbon/human/ai_controlled/job/medical/cmo
 	name = "Chief Medical Officer"
 
-	to_wear_l_radio = /obj/item/device/radio/headset/heads/cmo
+	to_wear_l_radio = /obj/item/radio/headset/heads/cmo
 	to_wear_r_radio = null
 	to_wear_uniform = /obj/item/clothing/under/rank/chief_medical_officer
 	to_wear_suit = /obj/item/clothing/suit/storage/toggle/labcoat/cmo
 	to_wear_shoes = /obj/item/clothing/shoes/brown
-	to_wear_l_pocket = /obj/item/weapon/storage/firstaid/adv
-	to_wear_r_pocket = /obj/item/device/pda/heads/cmo
-	to_wear_id_type = /obj/item/weapon/card/id/medical/head
+	to_wear_l_pocket = /obj/item/storage/firstaid/adv
+	to_wear_r_pocket = /obj/item/pda/heads/cmo
+	to_wear_id_type = /obj/item/card/id/medical/head
 	to_wear_id_job = "Chief Medical Officer"
 
 /mob/living/carbon/human/ai_controlled/job/mercenary
@@ -598,7 +598,7 @@
 	to_wear_helmet = null
 	to_wear_glasses = null
 	to_wear_mask = null
-	to_wear_l_radio = /obj/item/device/radio/headset/syndicate/alt
+	to_wear_l_radio = /obj/item/radio/headset/syndicate/alt
 	to_wear_r_radio = null
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_suspect_turtleneck
 	to_wear_suit = /obj/item/clothing/suit/armor/bulletproof/alt
@@ -607,12 +607,12 @@
 	to_wear_belt = null
 	to_wear_l_pocket = null
 	to_wear_r_pocket = null
-	to_wear_back = /obj/item/weapon/storage/backpack
-	to_wear_id_type = /obj/item/weapon/card/id/syndicate
+	to_wear_back = /obj/item/storage/backpack
+	to_wear_id_type = /obj/item/card/id/syndicate
 	to_wear_id_job = "Mercenary"
 
 	to_wear_l_hand = null
-	to_wear_r_hand = /obj/item/weapon/gun/projectile/p92x
+	to_wear_r_hand = /obj/item/gun/projectile/p92x
 
 /mob/living/carbon/human/ai_controlled/job/mercenary/officer
 	name = "Mercenary Officer"
@@ -620,7 +620,7 @@
 	to_wear_helmet = /obj/item/clothing/head/beret/sec/gov
 	to_wear_glasses = /obj/item/clothing/glasses/sunglasses/sechud/aviator
 	to_wear_mask = null
-	to_wear_l_radio = /obj/item/device/radio/headset/syndicate/alt
+	to_wear_l_radio = /obj/item/radio/headset/syndicate/alt
 	to_wear_r_radio = null
 	to_wear_uniform = /obj/item/clothing/under/rank/neo_suspicious_turtleneck
 	to_wear_suit = /obj/item/clothing/suit/armor/bulletproof/alt
@@ -629,9 +629,9 @@
 	to_wear_belt = null
 	to_wear_l_pocket = null
 	to_wear_r_pocket = null
-	to_wear_back = /obj/item/weapon/storage/backpack
-	to_wear_id_type = /obj/item/weapon/card/id/syndicate/officer
+	to_wear_back = /obj/item/storage/backpack
+	to_wear_id_type = /obj/item/card/id/syndicate/officer
 	to_wear_id_job = "Mercenary Officer"
 
 	to_wear_l_hand = null
-	to_wear_r_hand = /obj/item/weapon/gun/projectile/revolver/mateba
+	to_wear_r_hand = /obj/item/gun/projectile/revolver/mateba

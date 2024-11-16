@@ -133,9 +133,9 @@
 
 /datum/trait/positive/winged_flight/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	add_verb(H,/mob/living/proc/flying_toggle) //CHOMPEdit TGPanel
-	add_verb(H,/mob/living/proc/flying_vore_toggle) //CHOMPEdit TGPanel
-	add_verb(H,/mob/living/proc/start_wings_hovering) //CHOMPEdit TGPanel
+	add_verb(H, /mob/living/proc/flying_toggle)
+	add_verb(H, /mob/living/proc/flying_vore_toggle)
+	add_verb(H, /mob/living/proc/start_wings_hovering)
 
 /datum/trait/positive/soft_landing
 	name = "Soft Landing"
@@ -149,6 +149,8 @@
 	name = "Hard Feet"
 	desc = "Makes your nice clawed, scaled, hooved, armored, or otherwise just awfully calloused feet immune to glass shards."
 	cost = 1 //CHOMP Edit
+	allowed_species = list(SPECIES_HANNER, SPECIES_CUSTOM) //So it only shows up for custom species and hanner
+	custom_only = FALSE
 	var_changes = list("flags" = NO_MINOR_CUT) //Checked the flag is only used by shard stepping.
 */
 
@@ -160,7 +162,7 @@
 
 /datum/trait/positive/antiseptic_saliva/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	add_verb(H,/mob/living/carbon/human/proc/lick_wounds) //CHOMPEdit TGPanel
+	add_verb(H, /mob/living/carbon/human/proc/lick_wounds)
 
 /datum/trait/positive/traceur
 	name = "Traceur"
@@ -182,16 +184,18 @@
 	category = 0 //CHOMPEdit making weaver a neutral trait instead
 	cost = 0 //Also not worth 2 points, wtf, this is literally just fluff
 	var_changes = list("is_weaver" = 1)
+//	allowed_species = list(SPECIES_HANNER, SPECIES_CUSTOM) //So it only shows up for custom species and hanner CHOMPedit: We allowed further access of this.
+	custom_only = FALSE
 	has_preferences = list("silk_production" = list(TRAIT_PREF_TYPE_BOOLEAN, "Silk production on spawn", TRAIT_VAREDIT_TARGET_SPECIES), \
 							"silk_color" = list(TRAIT_PREF_TYPE_COLOR, "Silk color", TRAIT_VAREDIT_TARGET_SPECIES))
 
 /datum/trait/positive/weaver/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	add_verb(H,/mob/living/carbon/human/proc/check_silk_amount) //CHOMPEdit TGPanel
-	add_verb(H,/mob/living/carbon/human/proc/toggle_silk_production) //CHOMPEdit TGPanel
-	add_verb(H,/mob/living/carbon/human/proc/weave_structure) //CHOMPEdit TGPanel
-	add_verb(H,/mob/living/carbon/human/proc/weave_item) //CHOMPEdit TGPanel
-	add_verb(H,/mob/living/carbon/human/proc/set_silk_color) //CHOMPEdit TGPanel
+	add_verb(H, /mob/living/carbon/human/proc/check_silk_amount)
+	add_verb(H, /mob/living/carbon/human/proc/toggle_silk_production)
+	add_verb(H, /mob/living/carbon/human/proc/weave_structure)
+	add_verb(H, /mob/living/carbon/human/proc/weave_item)
+	add_verb(H, /mob/living/carbon/human/proc/set_silk_color)
 
 /datum/trait/positive/aquatic
 	name = "Aquatic"
@@ -199,20 +203,24 @@
 	cost = 1
 	custom_only = FALSE //CHOMPEdit: honestly within the bounds of genemods, just hopefully people actually design characters around it
 	var_changes = list("water_breather" = 1, "water_movement" = -4) //Negate shallow water. Half the speed in deep water.
+	allowed_species = list(SPECIES_HANNER, SPECIES_CUSTOM) //So it only shows up for custom species and hanner
+	custom_only = FALSE
 
 /datum/trait/positive/aquatic/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	add_verb(H,/mob/living/carbon/human/proc/water_stealth) //CHOMPEdit TGPanel
-	add_verb(H,/mob/living/carbon/human/proc/underwater_devour) //CHOMPEdit TGPanel
+	add_verb(H, /mob/living/carbon/human/proc/water_stealth)
+	add_verb(H, /mob/living/carbon/human/proc/underwater_devour)
 
 /datum/trait/positive/cocoon_tf
 	name = "Cocoon Spinner"
 	desc = "Allows you to build a cocoon around yourself, using it to transform your body if you desire."
 	cost = 1
+//	allowed_species = list(SPECIES_HANNER, SPECIES_CUSTOM) //So it only shows up for custom species and hanner CHOMPEDIT: It's a roleplay trait. Will things explode if more folks have it?
+	custom_only = FALSE
 
 /datum/trait/positive/cocoon_tf/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	add_verb(H,/mob/living/carbon/human/proc/enter_cocoon) //CHOMPEdit TGPanel
+	add_verb(H, /mob/living/carbon/human/proc/enter_cocoon)
 
 /* //CHOMPedit: We already have our own version of this trait.
 /datum/trait/positive/linguist

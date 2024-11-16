@@ -29,13 +29,13 @@
 
 	var/char_name = tgui_alert(src, "Spawn mob with their character name?", "Mob name", list("Yes", "No", "Cancel"))
 	var/name = 0
-	if(char_name == "Cancel")
+	if(!char_name || char_name == "Cancel")
 		return
 	if(char_name == "Yes")
 		name = 1
 	var/vorgans = tgui_alert(src, "Spawn mob with their character's vore organs and prefs?", "Vore organs", list("Yes", "No", "Cancel"))
 	var/organs
-	if(vorgans == "Cancel")
+	if(!vorgans || vorgans == "Cancel")
 		return
 	if(vorgans == "Yes")
 		organs = 1
@@ -98,7 +98,7 @@
 		if(M.z == pos_z)
 			to_chat(M, msg)
 	log_admin("ZNarrate: [key_name(usr)] : [msg]")
-	message_admins(span_blue("<B> ZNarrate: [key_name_admin(usr)] : [msg]<BR></B>"), 1)
+	message_admins(span_blue(span_bold(" ZNarrate: [key_name_admin(usr)] : [msg]<BR>")), 1)
 	feedback_add_details("admin_verb","GLNA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/toggle_vantag_hud(var/mob/target as mob)

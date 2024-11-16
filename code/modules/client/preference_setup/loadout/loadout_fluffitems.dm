@@ -7,16 +7,16 @@
 	cost = 0
 /*
 /datum/gear/fluff/testhorn
-	path = /obj/item/weapon/bikehorn
+	path = /obj/item/bikehorn
 	display_name = "Airhorn - Example Item"
 	description = "An example item that you probably shouldn't see!"
 	ckeywhitelist = list("mewchild")
 	allowed_roles = list("Station Engineer")
 */
 //The above is a direct copy of the core info from the _vr file
-/datum/gear/fluff/spareid
-	path = /obj/item/weapon/card/id/gold/captain/spare
-	sort_category = "Fluff Items"
-	display_name = "Captain's Spare ID"
-	ckeywhitelist = list("norsvenska")
-	cost = 0
+// /datum/gear/fluff/spareid
+// 	path = /obj/item/weapon/card/id/gold/captain/spare
+// 	sort_category = "Fluff Items"
+// 	display_name = "Captain's Spare ID"
+// 	ckeywhitelist = list("norsvenska")
+// 	cost = 0
