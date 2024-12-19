@@ -645,7 +645,7 @@
 	if(istype(usr, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = usr
 		if(H.ability_flags & 0x1)
-			to_chat(usr, "<span class='warning'>You cannot do that while phase shifted.</span>")
+			to_chat(usr, span_warning("You cannot do that while phase shifted."))
 			return
 	//CHOMPEdit end
 
@@ -866,7 +866,9 @@
 		|ACCESSORY_SLOT_TIE\
 		|ACCESSORY_SLOT_RANK\
 		|ACCESSORY_SLOT_DEPT\
-		|ACCESSORY_SLOT_OVER)
+		|ACCESSORY_SLOT_OVER\
+		|ACCESSORY_SLOT_RING\
+		|ACCESSORY_SLOT_WRIST)
 	restricted_accessory_slots = (\
 		ACCESSORY_SLOT_UTILITY\
 		|ACCESSORY_SLOT_WEAPON\

@@ -109,11 +109,13 @@
 #define FACTION_TYR "tyr" //CHOMPAdd
 #define FACTION_TYR_ANT "tyr_ants" //CHOMPAdd
 #define FACTION_TUNNELCLOWN "tunnelclown"
+#define FACTION_TURKEY "turkey"
 #define FACTION_WILD_ANIMAL "wild animal"
 #define FACTION_WOLFGIRL "wolfgirl"
 #define FACTION_WOLFTAUR "wolftaur"
 #define FACTION_WORM "worm"
 #define FACTION_XENO "xeno"
+#define FACTION_CORGI "corgi"
 #define FACTION_ZORGOIA "zorgoia" // CHOMPAdd
 
 #define FACTION_PLANTS "plants"

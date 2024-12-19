@@ -13243,10 +13243,7 @@
 	pixel_y = 5
 	},
 /obj/item/multitool,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/item/stack/cable_coil,
 /obj/item/stack/cable_coil,
 /turf/simulated/floor,
@@ -14441,9 +14438,21 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/machinery/chemical_dispenser/full{
-	density = 1
+/obj/item/reagent_containers/glass/bottle/diethylamine{
+	pixel_x = 5
 	},
+/obj/item/reagent_containers/glass/bottle/diethylamine{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/glass/bottle/mutagen{
+	pixel_y = 10;
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/glass/bottle/mutagen{
+	pixel_x = 5;
+	pixel_y = 10
+	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/hydro,
 /area/rnd/xenobiology/xenoflora)
 "dZe" = (
@@ -23133,14 +23142,8 @@
 "mJJ" = (
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/steel,
 /area/construction/firstdeck/construction3)
 "mKw" = (
@@ -26119,9 +26122,6 @@
 /area/rnd/xenobiology)
 "pPP" = (
 /obj/structure/table/standard,
-/obj/machinery/chemical_dispenser/full{
-	density = 1
-	},
 /obj/machinery/camera/network/research{
 	c_tag = "SCI - Xenobiology Fore Port"
 	},
@@ -33196,7 +33196,7 @@
 	dir = 8
 	},
 /obj/item/stack/material/phoron{
-	amount = 10
+	amount = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
