@@ -48,6 +48,8 @@
 
 	..(loc, generate_species)
 
+	species.produceCopy(species.traits.Copy(),src,null,FALSE)
+
 	h_style = to_wear_hair
 
 	f_style = to_wear_beard
