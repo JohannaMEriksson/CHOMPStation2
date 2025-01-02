@@ -593,7 +593,7 @@
 /mob/living/carbon/human/ai_controlled/job/mercenary
 	name = "Mercenary"
 
-	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting/threatening
+	ai_holder_type = /datum/ai_holder/simple_mob/humanoid/hostile
 
 	to_wear_helmet = null
 	to_wear_glasses = null
