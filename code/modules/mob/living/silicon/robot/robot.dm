@@ -246,6 +246,7 @@
 			C.install()
 	cell.charge = cell.maxcharge
 	..()
+	update_icon()
 
 /mob/living/silicon/robot/proc/init()
 	aiCamera = new/obj/item/camera/siliconcam/robot_camera(src)
@@ -415,6 +416,7 @@
 		ooc_notes_maybes = read_preference(/datum/preference/text/living/ooc_notes_maybes)
 		ooc_notes_style = read_preference(/datum/preference/toggle/living/ooc_notes_style)
 		//CHOMPAdd End
+		private_notes = client.prefs.read_preference(/datum/preference/text/living/private_notes)
 		custom_link = client.prefs.custom_link
 
 /mob/living/silicon/robot/verb/namepick()
@@ -1310,6 +1312,8 @@
 	rest_style = tgui_alert(src, "Select resting pose", "Resting Pose", sprite_datum.rest_sprite_options)
 	if(!rest_style)
 		rest_style = "Default"
+
+	update_icon()
 
 /mob/living/silicon/robot/verb/robot_nom(var/mob/living/T in living_mobs_in_view(1)) //CHOMPEdit
 	set name = "Robot Nom"

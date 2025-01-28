@@ -75,7 +75,7 @@
 		to_chat(src, "Some accounts did not have proper ages set in their clients.  This function requires database to be present.")
 
 	if(msg != "")
-		src << browse(msg, "window=Player_age_check")
+		src << browse("<html>[msg]</html>", "window=Player_age_check")
 	else
 		to_chat(src, "No matches for that age range found.")
 
@@ -1071,7 +1071,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 			human_cryopods[listname] = CP
 
 	//Gotta log this up here before they get ghostized and lose their key or anything.
-	log_and_message_admins("[key_name(src)] admin cryo'd [key_name(M)].")
+	log_and_message_admins("admin cryo'd [key_name(M)].", src)
 	feedback_add_details("admin_verb","ACRYO") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 	if(ishuman(M))
