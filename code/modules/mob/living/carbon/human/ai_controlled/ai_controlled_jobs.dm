@@ -439,7 +439,7 @@
 /mob/living/carbon/human/ai_controlled/job/security/gear/riot
 	name = "Security Officer (With Gear, Riot)"
 
-	to_wear_uniform = /obj/item/clothing/under/rank/neo_sec_gorka
+	to_wear_uniform = /obj/item/clothing/under/rank/neo_gorka/sec
 	to_wear_suit = /obj/item/clothing/suit/armor/riot
 	to_wear_helmet = /obj/item/clothing/head/helmet/riot
 	to_wear_belt = /obj/item/storage/belt/security/tactical
