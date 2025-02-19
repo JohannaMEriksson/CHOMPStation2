@@ -57,8 +57,13 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/proc/hide_on_manifest()
 	. = hide_on_manifest
 
-/obj/item/robot_module/New(var/mob/living/silicon/robot/R)
-	..()
+/obj/item/robot_module/Initialize(mapload)
+	. = ..()
+
+	if(!isrobot(loc))
+		return
+
+	var/mob/living/silicon/robot/R = loc
 	R.module = src
 	R.can_buckle = 1 //Chomp Addition; Makes all borgs rideable.
 
@@ -194,9 +199,12 @@ var/global/list/robot_modules = list(
 			CHANNEL_EXPLORATION = 1
 			)
 
-/obj/item/robot_module/robot/New(var/mob/living/silicon/robot/R)
-	..()
+/obj/item/robot_module/robot/Initialize(mapload)
+	. = ..()
 
+	if(!isrobot(loc))
+		return
+	var/mob/living/silicon/robot/R = loc
 	if(R.sprite_datum)
 		R.sprite_datum.do_equipment_glamour(src)
 
@@ -722,7 +730,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pickaxe/borgdrill(src)
 	src.modules += new /obj/item/storage/bag/sheetsnatcher/borg(src)
 	src.modules += new /obj/item/gripper/miner(src)
-	src.modules += new /obj/item/mining_scanner(src)
+	src.modules += new /obj/item/mining_scanner/robot(src)
 	src.modules += new /obj/item/card/id/cargo/miner/borg(src)
 	src.modules += new /obj/item/gun/energy/robotic/phasegun(src) //CHOMPedit: Phasegun for regular mining cyborg.
 	src.modules += new /obj/item/vac_attachment(src) //CHOMPAdd

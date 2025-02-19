@@ -60,8 +60,12 @@
 /obj/item/rig/protean/Destroy()
 	if(myprotean)
 		var/mob/living/carbon/human/P = myprotean
-		var/datum/species/protean/S = P?.species
-		S?.OurRig = null
+		if(!ishuman(P) && isprotblob(myprotean))
+			var/mob/living/simple_mob/protean_blob/blob = myprotean
+			P = blob.humanform
+		if(ishuman(P))
+			var/datum/species/protean/S = P?.species
+			S?.OurRig = null
 		myprotean = null
 	. = ..()
 
@@ -235,7 +239,7 @@
 	default_worn_icon = 'icons/mob/spacesuit.dmi'
 
 //Copy pasted most of this proc from base because I don't feel like rewriting the base proc with a shit load of exceptions
-/obj/item/rig/protean/attackby(obj/item/W as obj, mob/living/user as mob)
+/obj/item/rig/protean/attackby(obj/item/W, mob/living/user)
 	if(!istype(user))
 		return 0
 	if(dead)
@@ -339,7 +343,7 @@
 			to_chat(user, "There are no installed modules to remove.")
 			return
 
-		var/removal_choice = tgui_input_list(usr, "Which module would you like to remove?", "Removal Choice", possible_removals)
+		var/removal_choice = tgui_input_list(user, "Which module would you like to remove?", "Removal Choice", possible_removals)
 		if(!removal_choice)
 			return
 

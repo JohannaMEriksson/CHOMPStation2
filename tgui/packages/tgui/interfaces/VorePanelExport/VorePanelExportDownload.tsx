@@ -1,5 +1,6 @@
-import { useBackend } from '../../backend';
-import { Data } from './types';
+import { useBackend } from 'tgui/backend';
+
+import type { Data } from './types';
 import { generateBellyString } from './VorePanelExportBellyString';
 import { getCurrentTimestamp } from './VorePanelExportTimestamp';
 

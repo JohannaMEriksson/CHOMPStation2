@@ -126,7 +126,7 @@
 
 	log_admin("[key_name(src)] has animalized [M.key].")
 	spawn(10)
-		M.Animalize()
+		M.Animalize(usr)
 
 
 /client/proc/makepAI()
@@ -617,7 +617,7 @@
 	if(istype(M, /mob/living/carbon))
 		M.dna.SetSEState(block,!M.dna.GetSEState(block))
 		domutcheck(M,null,MUTCHK_FORCED)
-		M.update_mutations()
+		M.UpdateAppearance()
 		var/state="[M.dna.GetSEState(block)?"on":"off"]"
 		var/blockname=assigned_blocks[block]
 		message_admins("[key_name_admin(src)] has toggled [M.key]'s [blockname] block [state]!")
