@@ -39,14 +39,14 @@
 
 /obj/item/reagent_containers/food/snacks/meat/xeyakin
 
-/obj/item/reagent_containers/food/snacks/meat/xeyakin/Initialize()
+/obj/item/reagent_containers/food/snacks/meat/xeyakin/Initialize(mapload)
 	. = ..()
-	reagents.add_reagent("xeyakinblood", 2)
+	reagents.add_reagent(REAGENT_ID_XEYAKIN_BLOOD, 2)
 
 
 /datum/reagent/xeyakinblood
-	name = "Xeyakin Blood"
-	id = "xeyakinblood"
+	name = REAGENT_XEYAKIN_BLOOD
+	id = REAGENT_ID_XEYAKIN_BLOOD
 	description = "The blood of a legendary beast."
 	taste_description = "divine"
 	taste_mult = 1.5
@@ -54,6 +54,8 @@
 	color = "#FF8000"
 	overdose = REAGENTS_OVERDOSE * 0.25
 	scannable = 0
+	supply_conversion_value = REFINERYEXPORT_VALUE_GODTIER
+	industrial_use = REFINERYEXPORT_REASON_FOOD
 
 /datum/reagent/xeyakinblood/affect_blood(var/mob/living/carbon/M, var/alien, var/removed) //should proabaly make something more special but this isn't meant to be a proper chem
 	var/chem_effective = 1 * M.species.chem_strength_heal

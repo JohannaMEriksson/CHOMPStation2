@@ -20,7 +20,7 @@
 	skybox_pixel_x = 0
 	skybox_pixel_y = 0
 
-/obj/effect/overmap/visitable/sector/virgo2/Initialize()
+/obj/effect/overmap/visitable/sector/virgo2/Initialize(mapload)
 	for(var/obj/effect/overmap/visitable/ship/stellar_delight/sd in world)
 		docking_codes = sd.docking_codes
 	. = ..()
@@ -125,7 +125,7 @@
 	color = "#eacd7c"
 	VIRGO2_SET_ATMOS
 
-/turf/unsimulated/floor/sky/virgo2_sky/Initialize()
+/turf/unsimulated/floor/sky/virgo2_sky/Initialize(mapload)
 	skyfall_levels = list(z+1)
 	. = ..()
 
@@ -161,7 +161,12 @@ VIRGO2_TURF_CREATE(/turf/simulated/mineral)
 			ORE_SILVER = 8,
 			ORE_PHORON = 18,
 			ORE_LEAD = 2,
-			ORE_VERDANTIUM = 1))
+			ORE_VERDANTIUM = 1,
+			ORE_TIN = 3,
+			ORE_COPPER = 2,
+			ORE_BAUXITE = 9,
+			ORE_QUARTZ = 5,
+			ORE_PAINITE = 1))
 	else
 		mineral_name = pickweight(list(
 			ORE_MARBLE = 2,
@@ -172,7 +177,10 @@ VIRGO2_TURF_CREATE(/turf/simulated/mineral)
 			ORE_GOLD = 3,
 			ORE_SILVER = 3,
 			ORE_PHORON = 25,
-			ORE_LEAD = 1))
+			ORE_LEAD = 1,
+			ORE_TIN = 12,
+			ORE_COPPER = 9,
+			ORE_QUARTZ = 12))
 
 	if(mineral_name && (mineral_name in GLOB.ore_data))
 		mineral = GLOB.ore_data[mineral_name]

@@ -34,7 +34,7 @@
 	pickup_sound = 'sound/items/pickup/device.ogg'
 	drop_sound = 'sound/items/drop/device.ogg'
 
-/obj/item/perfect_tele/Initialize()
+/obj/item/perfect_tele/Initialize(mapload)
 	. = ..()
 
 	flags |= NOBLUDGEON
@@ -138,7 +138,7 @@ This device records all warnings given and teleport events for admin review in c
 			to_chat(user, span_warning("The translocator can't support any more beacons!"))
 			return
 
-		var/new_name = html_encode(tgui_input_text(user,"New beacon's name (2-20 char):","[src]",null,20))
+		var/new_name = tgui_input_text(user,"New beacon's name (2-20 char):","[src]",null,20)
 		if(!check_menu(user))
 			return
 
@@ -376,10 +376,7 @@ This device records all warnings given and teleport events for admin review in c
 	var/creator
 	var/warned_users = list()
 	var/tele_network = null
-
-/obj/item/perfect_tele_beacon/New()
-	..()
-	flags |= NOBLUDGEON
+	flags = NOBLUDGEON
 
 /obj/item/perfect_tele_beacon/Destroy()
 	tele_name = null

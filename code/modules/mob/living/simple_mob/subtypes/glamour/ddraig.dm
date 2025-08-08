@@ -76,9 +76,7 @@
 	verbs |= /mob/living/proc/glamour_invisibility
 	movement_cooldown = -1
 
-/mob/living/simple_mob/vore/ddraig/init_vore()
-	if(!voremob_loaded)
-		return
+/mob/living/simple_mob/vore/ddraig/load_default_bellies()
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
@@ -246,7 +244,7 @@
 
 /obj/item/projectile/beam/mouselaser/ddraig/spawn_mob(var/mob/living/target)
 	var/list/tf_list = list(/mob/living/simple_mob/animal/passive/mouse,
-		/mob/living/simple_mob/animal/passive/mouse/rat,
+		/mob/living/simple_mob/animal/passive/mouse/rat/strong, // CHOMPEdit
 		/mob/living/simple_mob/vore/alienanimals/dustjumper,
 		/mob/living/simple_mob/vore/woof,
 		/mob/living/simple_mob/animal/passive/dog/corgi,
@@ -275,7 +273,7 @@
 	can_flee = TRUE
 	flee_when_dying = FALSE
 
-/datum/ai_holder/simple_mob/vore/find_target(list/possible_targets, has_targets_list)
+/datum/ai_holder/simple_mob/vore/ddraig/find_target(list/possible_targets, has_targets_list)
 	if(!vore_hostile)
 		return ..()
 	if(!isanimal(holder))	//Only simplemobs have the vars we need
@@ -292,7 +290,7 @@
 	for(var/mob/living/possible_target in possible_targets)
 		if(!can_attack(possible_target))
 			continue
-		if(isanimal(target) && !check_attacker(target)) //Do not target simple mobs who didn't attack you (disengage with TF'd mobs)
+		if(isanimal(possible_target) && !check_attacker(possible_target)) //Do not target simple mobs who didn't attack you (disengage with TF'd mobs)
 			continue
 		. |= possible_target
 		if(!isliving(possible_target))
@@ -317,7 +315,7 @@
 		set_stance(STANCE_FLEE)
 		return
 
-	if((holder.health < (holder.maxHealth / 4)) && !used_invis)
+	if((holder.health < (holder.getMaxHealth() / 4)) && !used_invis)
 		holder.cloak()
 		used_invis = 1
 		step_away(holder, target, 8)
@@ -368,7 +366,7 @@
 		on_engagement(target)
 		if(firing_lanes && !test_projectile_safety(target))
 			// Nudge them a bit, maybe they can shoot next time.
-			var/turf/T = get_step(holder, pick(cardinal))
+			var/turf/T = get_step(holder, pick(GLOB.cardinal))
 			if(T)
 				holder.IMove(T) // IMove() will respect movement cooldown.
 				holder.face_atom(target)

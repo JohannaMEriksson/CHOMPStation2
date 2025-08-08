@@ -55,7 +55,7 @@
 			if((get_z(L) in using_map.station_levels) && !istype(L.loc, /turf/space))
 				loc_display = T.loc
 			if(track.malfunction)
-				loc_display = pick(teleportlocs)
+				loc_display = pick(GLOB.teleportlocs)
 			trackImplants.Add(list(list(
 				"host" = L,
 				"ref" = "\ref[track]",
@@ -82,7 +82,7 @@
 				to_chat(ui.user, "Unauthorized Access.")
 			. = TRUE
 		if("warn")
-			var/warning = sanitize(tgui_input_text(ui.user, "Message:", "Enter your message here!", ""))
+			var/warning = tgui_input_text(ui.user, "Message:", "Enter your message here!", "", MAX_MESSAGE_LEN)
 			if(!warning)
 				return
 			var/obj/item/implant/I = locate(params["imp"])

@@ -74,8 +74,7 @@
 /area/submap/debris1)
 "fp" = (
 /obj/structure/cable{
-	icon_state = "4-8";
-	tag = ""
+	icon_state = "4-8"
 	},
 /turf/template_noop,
 /area/submap/debris1)
@@ -161,11 +160,6 @@
 /area/submap/debris1)
 "jG" = (
 /turf/simulated/floor/plating,
-/area/submap/debris1)
-"kf" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/template_noop,
 /area/submap/debris1)
 "kg" = (
 /obj/structure/disposalpipe/segment{
@@ -347,7 +341,7 @@
 /turf/simulated/floor/plating,
 /area/submap/debris1)
 "uh" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/machinery/mecha_part_fabricator_tg,
 /turf/simulated/floor/tiled/airless,
 /area/submap/debris1)
 "uj" = (
@@ -408,7 +402,7 @@
 /turf/template_noop,
 /area/submap/debris1)
 "yk" = (
-/obj/machinery/mecha_part_fabricator/pros,
+/obj/machinery/mecha_part_fabricator_tg/prosthetics,
 /turf/simulated/floor/tiled/airless,
 /area/submap/debris1)
 "yv" = (
@@ -2821,7 +2815,7 @@ wq
 ip
 wq
 ip
-kf
+ip
 Ma
 Ma
 WW
@@ -2909,7 +2903,7 @@ gO
 Pj
 mk
 gO
-kf
+ip
 de
 de
 de
@@ -4020,7 +4014,7 @@ yk
 Wx
 AP
 AP
-kf
+ip
 wq
 wq
 wq

@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(vote)
 	// Before doing the vote, see if anyone is playing.
 	// If not, just do the transfer.
 	var/players_are_in_round = FALSE
-	for(var/mob/living/L as anything in player_list) // Mobs with clients attached.
+	for(var/mob/living/L as anything in GLOB.player_list) // Mobs with clients attached.
 		if(!istype(L)) // Exclude ghosts and other weird things.
 			continue
 		if(L.stat == DEAD) // Dead mobs aren't playing.
@@ -98,10 +98,10 @@ SUBSYSTEM_DEF(vote)
 				if(choices["Continue Playing"] >= greatest_votes)
 					greatest_votes = choices["Continue Playing"]
 			else if(mode == VOTE_GAMEMODE)
-				if(master_mode in choices)
-					choices[master_mode] += non_voters
-					if(choices[master_mode] >= greatest_votes)
-						greatest_votes = choices[master_mode]
+				if(GLOB.master_mode in choices)
+					choices[GLOB.master_mode] += non_voters
+					if(choices[GLOB.master_mode] >= greatest_votes)
+						greatest_votes = choices[GLOB.master_mode]
 			else if(mode == VOTE_CREW_TRANSFER)
 				var/factor = 0.5
 				switch(world.time / (10 * 60)) // minutes
@@ -162,12 +162,12 @@ SUBSYSTEM_DEF(vote)
 				if(. == "Restart Round")
 					restart = 1
 			if(VOTE_GAMEMODE)
-				if(master_mode != .)
+				if(GLOB.master_mode != .)
 					world.save_mode(.)
 					if(ticker && ticker.mode)
 						restart = 1
 					else
-						master_mode = .
+						GLOB.master_mode = .
 			if(VOTE_CREW_TRANSFER)
 				if(. == "Initiate Crew Transfer")
 					init_shift_change(null, 1)
@@ -245,11 +245,11 @@ SUBSYSTEM_DEF(vote)
 						choices.Add(antag.role_text)
 				choices.Add("None")
 			if(VOTE_CUSTOM)
-				question = sanitizeSafe(tgui_input_text(usr, "What is the vote for?"))
+				question = tgui_input_text(usr, "What is the vote for?", max_length = MAX_MESSAGE_LEN)
 				if(!question)
 					return 0
 				for(var/i = 1 to 10)
-					var/option = capitalize(sanitize(tgui_input_text(usr, "Please enter an option or hit cancel to finish")))
+					var/option = capitalize(tgui_input_text(usr, "Please enter an option or hit cancel to finish", max_length = MAX_MESSAGE_LEN))
 					if(!option || mode || !usr.client)
 						break
 					choices.Add(option)
@@ -284,7 +284,7 @@ SUBSYSTEM_DEF(vote)
 		return
 	var/admin = FALSE
 	if(C.holder)
-		if(C.holder.rights & R_ADMIN|R_EVENT)
+		if(C.holder.rights & (R_ADMIN|R_EVENT))
 			admin = TRUE
 
 	. = "<html><head><title>Voting Panel</title></head><body>"

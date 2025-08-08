@@ -8,10 +8,10 @@
 /mob/living/proc/can_slip_vore(var/mob/living/target)
 	if(!target.is_slipping)	//Obviously they have to be slipping to get slip vored
 		return FALSE
-	// CHOMPAdd Start
 	if(is_incorporeal())
 		return FALSE
-	// CHOMPAdd End
+	if(!target.allowmobvore && isanimal(src) && !ckey)
+		return FALSE
 	if(world.time <= target.slip_protect)
 		return FALSE
 	if(!(src.can_be_drop_pred && target.devourable && target.can_be_drop_prey))	//Make sure both of their prefs align with what we're gonna do.
@@ -27,10 +27,10 @@
 /mob/living/proc/can_be_slip_vored_by(var/mob/living/target)
 	if(!target.is_slipping)	//Obviously they have to be slipping to get slip vored
 		return FALSE
-	// CHOMPAdd Start
 	if(is_incorporeal())
 		return FALSE
-	// CHOMPAdd End
+	if(!allowmobvore && isanimal(target) && !target.ckey)
+		return FALSE
 	if(world.time <= target.slip_protect)
 		return FALSE
 	if(!(target.can_be_drop_pred && src.devourable && src.can_be_drop_prey))	//Make sure both of their prefs align with what we're gonna do.
@@ -46,14 +46,14 @@
 /mob/living/Crossed(var/atom/movable/AM)
 	..()
 	var/mob/living/target = AM
-	if(istype(target) && !target.incorporeal_move && !src.incorporeal_move)	//The slip vore begins
+	if(istype(target) && !target.is_incorporeal() && !src.is_incorporeal())	//The slip vore begins
 		if(can_slip_vore(target) && !src.slip_vore_in_progress && !target.slip_vore_in_progress)	//If we can vore them go for it
-			perform_the_nom(src,target,src,src.vore_selected,1)
+			perform_the_nom(src,target,src,src.vore_selected,-1)
 			target.slip_vore_in_progress = FALSE
 			target.is_slipping = FALSE
 			return
 		else if(can_be_slip_vored_by(target) && !src.slip_vore_in_progress && !target.slip_vore_in_progress) //Otherwise, if they can vore us, make it happen.
-			perform_the_nom(target,src,target,target.vore_selected,1)
+			perform_the_nom(target,src,target,target.vore_selected,-1)
 			slip_vore_in_progress = FALSE
 			is_slipping = FALSE
 			return

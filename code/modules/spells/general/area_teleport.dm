@@ -26,18 +26,19 @@
 	var/A = null
 
 	if(!randomise_selection)
-		A = tgui_input_list(user, "Area to teleport to", "Teleport", teleportlocs)
+		A = tgui_input_list(user, "Area to teleport to", "Teleport", GLOB.teleportlocs)
 	else
-		A = pick(teleportlocs)
+		A = pick(GLOB.teleportlocs)
 
-	var/area/thearea = teleportlocs[A]
+	var/area/thearea = GLOB.teleportlocs[A]
 
 	return list(thearea)
 
 /spell/area_teleport/cast(area/thearea, mob/user)
 	if(!istype(thearea))
 		if(istype(thearea, /list))
-			thearea = thearea[1]
+			var/list/area_list = thearea
+			thearea = area_list[1]
 	var/list/L = list()
 	for(var/turf/T in get_area_turfs(thearea.type))
 		if(!T.density)

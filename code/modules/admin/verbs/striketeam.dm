@@ -6,7 +6,7 @@ var/const/commandos_possible = 6 //if more Commandos are needed in the future
 	set name = "Spawn Strike Team"
 	set desc = "Spawns a strike team if you want to run an admin event."
 
-	if(!src.holder)
+	if(!check_rights_for(src, R_HOLDER))
 		to_chat(src, "Only administrators may use this command.")
 		return
 
@@ -43,7 +43,7 @@ var/const/commandos_possible = 6 //if more Commandos are needed in the future
 
 	choice = null
 	while(!choice)
-		choice = sanitize(tgui_input_text(src, "Please specify which mission the strike team shall undertake.", "Specify Mission", ""))
+		choice = tgui_input_text(src, "Please specify which mission the strike team shall undertake.", "Specify Mission", "", MAX_MESSAGE_LEN)
 		if(!choice)
 			if(tgui_alert(usr, "Error, no mission set. Do you want to exit the setup process?","Strike Team",list("Yes","No"))!="No")
 				return

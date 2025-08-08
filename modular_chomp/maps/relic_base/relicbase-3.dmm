@@ -1,4 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aaa" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/rnd/production/protolathe/department/engineering,
+/turf/simulated/floor/tiled/techmaint,
+/area/engineering/workshop)
 "aab" = (
 /obj/effect/map_effect/portal/master/side_a/caves_to_wilderness,
 /turf/unsimulated/wall/planetary/normal/thor,
@@ -701,9 +709,7 @@
 /area/surface/outside/plains/outpost)
 "aqe" = (
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "aqq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -781,9 +787,7 @@
 /area/surface/outside/path/plains)
 "asD" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "asF" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/grassybush{
@@ -851,9 +855,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "auf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1090,9 +1092,7 @@
 /area/surface/outpost/mining_main/refinery)
 "aCQ" = (
 /turf/simulated/floor/water/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "aCZ" = (
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -1983,6 +1983,12 @@
 	},
 /turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
+"bdE" = (
+/obj/structure/bed/double/padded{
+	name = "taur-sized bed"
+	},
+/turf/simulated/floor/wood,
+/area/surface/outpost/civilian/fishing)
 "bdY" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -2232,7 +2238,7 @@
 /turf/simulated/wall/r_wall,
 /area/surface/outpost/main/landing/one)
 "ble" = (
-/obj/machinery/computer/rdconsole/core{
+/obj/machinery/computer/rdconsole_tg{
 	dir = 8
 	},
 /obj/machinery/light{
@@ -2432,7 +2438,7 @@
 /area/library)
 "bow" = (
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "rsr_ele_door";
 	locked = 1;
@@ -2777,12 +2783,6 @@
 /area/medical/medbay)
 "byd" = (
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/door/airlock{
 	name = "Library Office";
 	req_access = list(37)
@@ -2837,9 +2837,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "bzp" = (
 /obj/effect/floor_decal/stairs/wood_stairs,
 /turf/simulated/floor/wood{
@@ -4066,9 +4064,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/substation/engineering)
 "ceG" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/hand_labeler,
-/obj/item/hand_labeler,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
 	},
@@ -4079,6 +4074,9 @@
 	c_tag = "CRG - Cargo Office North";
 	name = "security camera"
 	},
+/obj/machinery/autolathe,
+/obj/fiftyspawner/glass,
+/obj/fiftyspawner/steel,
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "ceN" = (
@@ -4104,9 +4102,7 @@
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
+/obj/item/storage/pouch,
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
 	pixel_y = 31
@@ -4460,7 +4456,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/security_hallway)
 "cml" = (
-/obj/machinery/r_n_d/protolathe,
+/obj/machinery/rnd/production/protolathe/department/science,
 /turf/simulated/floor/tiled,
 /area/rnd/lab)
 "cmx" = (
@@ -4711,9 +4707,7 @@
 /area/security/armoury)
 "cpk" = (
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "cpv" = (
 /obj/structure/table/hardwoodtable,
 /obj/machinery/door/blast/gate/thin{
@@ -5052,8 +5046,7 @@
 	},
 /obj/structure/sign/directions/evac{
 	dir = 8;
-	pixel_x = 32;
-	pixel_z = 8
+	pixel_x = 32
 	},
 /turf/simulated/floor/outdoors/dirt,
 /area/engineering/external_lights)
@@ -5573,9 +5566,7 @@
 "cEG" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/water/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "cEQ" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/mob_spawner/mouse_nest,
@@ -5690,9 +5681,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "cHj" = (
 /obj/machinery/light/bigfloorlamp{
 	active_power_usage = 0;
@@ -6748,15 +6737,11 @@
 "dcJ" = (
 /mob/living/simple_mob/animal/passive/fish/koi,
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dcK" = (
 /mob/living/simple_mob/animal/passive/fish/solarfish,
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dcL" = (
 /obj/structure/stairs/spawner/east,
 /turf/simulated/floor/plating,
@@ -6829,9 +6814,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dfk" = (
 /obj/structure/flora/ausbushes/grassybush{
 	opacity = 1
@@ -6839,9 +6822,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dfl" = (
 /obj/structure/stairs/spawner/east,
 /turf/simulated/floor/tiled/steel_dirty{
@@ -6888,17 +6869,14 @@
 /area/surface/outpost/mining_main/refinery)
 "dgc" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/blood/oil/streak{
-	amount = 0
-	},
-/obj/machinery/autolathe,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/structure/closet/toolcloset,
+/obj/item/flashlight,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/workshop)
 "dgk" = (
-/obj/structure/table/standard,
 /obj/structure/table/standard,
 /obj/item/stack/cable_coil,
 /obj/item/multitool,
@@ -7661,9 +7639,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dxe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -8024,9 +8000,7 @@
 "dCF" = (
 /mob/living/simple_mob/animal/passive/crab/Coffee,
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dCI" = (
 /obj/structure/table/standard,
 /obj/item/radio/intercom/department/security{
@@ -8161,9 +8135,7 @@
 /area/engineering/foyer)
 "dFu" = (
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dFv" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -8562,9 +8534,7 @@
 	dir = 6
 	},
 /turf/simulated/wall/r_wall,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dNI" = (
 /obj/effect/floor_decal/stairs/dark_stairs{
 	dir = 4
@@ -8885,9 +8855,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dSr" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/steel_dirty{
@@ -8944,10 +8912,6 @@
 /turf/simulated/floor/tiled/white,
 /area/security/aid_station)
 "dUq" = (
-/obj/structure/bed/double/padded{
-	name = "taur-sized bed";
-	pixel_y = 25
-	},
 /obj/structure/bed/double/padded{
 	name = "taur-sized bed"
 	},
@@ -9130,15 +9094,11 @@
 "dWJ" = (
 /obj/effect/floor_decal/rust/mono_rusted3,
 /turf/simulated/wall/r_wall,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dWK" = (
 /obj/structure/prop/rock/watersharp,
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dWU" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/medical,
@@ -10381,7 +10341,7 @@
 /turf/simulated/wall/r_wall,
 /area/quartermaster/hallway)
 "evZ" = (
-/obj/machinery/r_n_d/destructive_analyzer,
+/obj/machinery/autolathe,
 /turf/simulated/floor/tiled,
 /area/rnd/lab)
 "ewo" = (
@@ -10912,9 +10872,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eJZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -10931,9 +10889,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eKw" = (
 /obj/structure/boxingrope{
 	dir = 1
@@ -10961,9 +10917,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eLF" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -11373,9 +11327,7 @@
 /area/security/security_hallway)
 "eTJ" = (
 /turf/simulated/floor/outdoors/dirt,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eTK" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -11528,9 +11480,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eWY" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
@@ -11694,11 +11644,11 @@
 /area/shuttle/needle)
 "faQ" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle";
 	pixel_y = 26;
 	tag_airpump = "needle_pump";
@@ -12776,10 +12726,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/one)
-"fwx" = (
-/obj/machinery/computer/rdconsole/robotics,
-/turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
 "fxb" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -14290,9 +14236,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "geR" = (
 /obj/structure/flora/tree/jungle_small,
 /obj/structure/flora/ausbushes/brflowers,
@@ -14350,9 +14294,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "gfT" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/security/evidence_storage)
@@ -14390,9 +14332,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "ggn" = (
 /obj/structure/closet/wardrobe/detective,
 /obj/structure/window/reinforced,
@@ -14815,7 +14755,6 @@
 /obj/machinery/light_construct/small{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -16405,7 +16344,7 @@
 /area/engineering/engi_restroom)
 "hbc" = (
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "rsr_base_door";
 	locked = 1;
@@ -17748,9 +17687,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "hDd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -17883,7 +17820,7 @@
 	dir = 10
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "car_mining_base";
 	name = "shuttle bay controller";
 	pixel_x = -2;
@@ -18093,15 +18030,6 @@
 "hJB" = (
 /turf/simulated/wall,
 /area/hallway/primary/thirddeck/stationgateway)
-"hJD" = (
-/obj/effect/floor_decal/rust,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel_dirty{
-	outdoors = 1
-	},
-/area/surface/outside/path/plains)
 "hKs" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -18245,9 +18173,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "hPn" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
@@ -18607,7 +18533,6 @@
 /area/surface/outpost/main/landing/one)
 "hXm" = (
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -18642,9 +18567,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "hXP" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/wingrille_spawn/reinforced,
@@ -18670,7 +18593,7 @@
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/engineering/external_lights)
 "hYx" = (
-/obj/machinery/r_n_d/circuit_imprinter,
+/obj/machinery/rnd/production/circuit_imprinter,
 /obj/item/reagent_containers/glass/beaker/sulphuric,
 /turf/simulated/floor/tiled,
 /area/rnd/lab)
@@ -19150,7 +19073,6 @@
 /obj/structure/fans/tiny,
 /obj/machinery/door/airlock/command{
 	name = "Electrical Maintenance";
-	req_access = null;
 	req_one_access = list(1,11,24)
 	},
 /turf/simulated/floor,
@@ -19189,7 +19111,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "iiF" = (
-/mob/living/simple_mob/animal/passive/raccoon_ch,
+/mob/living/simple_mob/animal/passive/raccoon,
 /obj/structure/railing,
 /obj/structure/flora/ausbushes/grassybush{
 	opacity = 1
@@ -19453,7 +19375,7 @@
 /area/rnd/misc_lab)
 "ipw" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "car_mining_door";
 	locked = 1;
@@ -19990,9 +19912,7 @@
 /turf/simulated/floor/plating{
 	outdoors = 1
 	},
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "iAC" = (
 /obj/effect/floor_decal/chapel{
 	dir = 4
@@ -20297,9 +20217,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "iGO" = (
 /obj/machinery/door/airlock/glass,
 /obj/machinery/door/firedoor/border_only,
@@ -20923,16 +20841,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/table/steel,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/floor_painter,
-/obj/item/multitool{
-	pixel_x = 5
-	},
-/obj/item/t_scanner,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/random/tech_supply,
-/obj/random/tech_supply,
+/obj/machinery/autolathe,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/workshop)
 "iUT" = (
@@ -21128,9 +21038,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "iYg" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
@@ -21482,9 +21390,7 @@
 /obj/structure/closet/firecloset/full,
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jgp" = (
 /obj/effect/zone_divider,
 /obj/machinery/camera/network/exterior{
@@ -22107,9 +22013,7 @@
 "jAM" = (
 /obj/machinery/porta_turret{
 	check_access = 0;
-	check_anomalies = 1;
 	check_arrest = 0;
-	check_records = 1;
 	faction = "neutral";
 	installation = /obj/item/gun/energy/locked/phasegun/cannon/unlocked
 	},
@@ -22227,9 +22131,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jCC" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -22324,9 +22226,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jGC" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/dark,
@@ -22400,9 +22300,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jHX" = (
 /obj/machinery/door/blast/shutters{
 	id = "cargounload";
@@ -23151,9 +23049,7 @@
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "jVM" = (
 /obj/machinery/camera/network/exterior{
 	c_tag = "EXT - Research South 8"
@@ -23182,9 +23078,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jXz" = (
 /turf/simulated/wall,
 /area/medical/reception)
@@ -23291,9 +23185,7 @@
 	dir = 9
 	},
 /turf/simulated/wall/r_wall,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jZv" = (
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/steel_dirty,
@@ -23749,8 +23641,7 @@
 /obj/structure/catwalk,
 /obj/structure/sign/directions/evac{
 	dir = 4;
-	pixel_x = 32;
-	pixel_z = 8
+	pixel_x = 32
 	},
 /obj/structure/railing/grey,
 /obj/structure/marker_beacon{
@@ -24689,7 +24580,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
 "kEH" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/machinery/mecha_part_fabricator_tg,
 /turf/simulated/floor/tiled,
 /area/assembly/robotics)
 "kEK" = (
@@ -24776,9 +24667,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "kHa" = (
 /obj/structure/railing/grey{
 	dir = 8
@@ -25681,9 +25570,7 @@
 /area/quartermaster/foyer)
 "lfc" = (
 /turf/simulated/wall/r_wall,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "lfm" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -26148,11 +26035,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/research_restroom_sc)
 "loA" = (
-/obj/structure/sign/directions/evac{
-	dir = 4;
-	pixel_y = 32;
-	pixel_z = 8
-	},
 /obj/structure/cable/green{
 	icon_state = "6-9"
 	},
@@ -27205,17 +27087,12 @@
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
-/obj/machinery/door/airlock/command{
-	name = "Chief Engineer";
-	req_access = list(56)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/door/airlock/command{
+	name = "Chief Engineer";
+	req_access = list(56)
 	},
 /turf/simulated/floor/bmarble,
 /area/crew_quarters/heads/sc/chief)
@@ -27353,9 +27230,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "lPs" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -27408,9 +27283,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "lQq" = (
 /obj/structure/cable/green{
 	icon_state = "1-8"
@@ -27626,8 +27499,7 @@
 /obj/structure/catwalk,
 /obj/structure/sign/directions/evac{
 	dir = 8;
-	pixel_y = -32;
-	pixel_z = -8
+	pixel_y = -32
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -27799,7 +27671,6 @@
 	dir = 6
 	},
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -28151,11 +28022,9 @@
 	},
 /obj/structure/sign/directions/evac{
 	dir = 4;
-	pixel_y = -32;
-	pixel_z = 8
+	pixel_y = -32
 	},
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -28305,8 +28174,7 @@
 "mmx" = (
 /obj/structure/sign/directions/evac{
 	dir = 4;
-	pixel_y = -32;
-	pixel_z = 8
+	pixel_y = -32
 	},
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/steel_dirty{
@@ -28478,9 +28346,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "mrz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -28594,8 +28460,7 @@
 "mtB" = (
 /obj/structure/sign/directions/evac{
 	dir = 4;
-	pixel_x = 32;
-	pixel_z = 8
+	pixel_x = 32
 	},
 /obj/structure/railing/grey{
 	dir = 1
@@ -28985,7 +28850,6 @@
 /area/bridge)
 "mDs" = (
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -29101,9 +28965,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "mEL" = (
 /obj/item/towel/random,
 /obj/item/towel/random{
@@ -29329,8 +29191,7 @@
 "mKe" = (
 /obj/structure/sign/directions/evac{
 	dir = 4;
-	pixel_y = 32;
-	pixel_z = 8
+	pixel_y = 32
 	},
 /obj/structure/sign/directions/command{
 	dir = 4;
@@ -29943,7 +29804,6 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -30073,9 +29933,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "mXY" = (
 /obj/structure/window/reinforced/survival_pod{
 	density = 0;
@@ -30388,7 +30246,7 @@
 "nfe" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "car_mining_base_door";
 	locked = 1;
@@ -30742,8 +30600,7 @@
 "nmh" = (
 /obj/structure/sign/directions/evac{
 	dir = 4;
-	pixel_y = -32;
-	pixel_z = 8
+	pixel_y = -32
 	},
 /obj/item/flag,
 /turf/simulated/floor/tiled/steel_dirty{
@@ -31555,6 +31412,8 @@
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 4
 	},
+/obj/item/hand_labeler,
+/obj/item/hand_labeler,
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "nJv" = (
@@ -31764,9 +31623,7 @@
 	name_tag = "Exploration Subgrid"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "nND" = (
 /turf/simulated/shuttle/wall/voidcraft/no_join,
 /area/shuttle/needle)
@@ -32546,9 +32403,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "ofQ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -32575,6 +32430,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/rnd/production/protolathe/department/security,
 /turf/simulated/floor/tiled/dark,
 /area/security/security_hallway)
 "ogk" = (
@@ -32865,17 +32721,13 @@
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "oqR" = (
-/obj/structure/table/standard,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
-/obj/item/fulton_core,
-/obj/item/extraction_pack,
-/obj/item/extraction_pack,
-/obj/item/extraction_pack,
+/obj/machinery/rnd/production/protolathe/department/medical,
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay_primary_storage)
 "orh" = (
@@ -32892,7 +32744,6 @@
 /area/surface/outpost/civilian/emergency_storage)
 "osm" = (
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -32947,6 +32798,10 @@
 	dir = 1;
 	pixel_y = 21
 	},
+/obj/item/extraction_pack,
+/obj/item/extraction_pack,
+/obj/item/extraction_pack,
+/obj/item/fulton_core,
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay_primary_storage)
 "otg" = (
@@ -32954,7 +32809,7 @@
 /turf/simulated/floor/water/contaminated,
 /area/surface/outpost/civilian/emergency_storage)
 "otk" = (
-/obj/machinery/r_n_d/server/core,
+/obj/machinery/rnd/server/master,
 /turf/simulated/floor/bluegrid{
 	name = "Server Base";
 	nitrogen = 500;
@@ -32963,7 +32818,7 @@
 	},
 /area/server)
 "otx" = (
-/mob/living/simple_mob/animal/passive/raccoon_ch,
+/mob/living/simple_mob/animal/passive/raccoon,
 /turf/simulated/floor/outdoors/dirt,
 /area/surface/outside/path/plains)
 "otF" = (
@@ -32971,9 +32826,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "otK" = (
 /obj/random/tech_supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -34324,9 +34177,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "oZM" = (
 /obj/structure/closet/l3closet/medical,
 /obj/structure/cable/green{
@@ -34438,7 +34289,6 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_8)
 "pcj" = (
-/obj/machinery/autolathe,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
 	},
@@ -34647,14 +34497,14 @@
 /area/surface/outpost/main/garage)
 "phY" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_inner";
 	locked = 1;
 	name = "Internal Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "needle";
 	name = "interior access button";
 	pixel_y = 26
@@ -34690,7 +34540,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/cryo/autoresleeve)
 "piU" = (
-/mob/living/simple_mob/animal/passive/raccoon_ch,
+/mob/living/simple_mob/animal/passive/raccoon,
 /turf/simulated/floor/outdoors/dirt,
 /area/surface/outside/plains/outpost)
 "pjq" = (
@@ -35312,8 +35162,7 @@
 "pvt" = (
 /obj/structure/sign/directions/evac{
 	dir = 4;
-	pixel_y = 32;
-	pixel_z = 8
+	pixel_y = 32
 	},
 /obj/structure/sign/directions/security{
 	dir = 9;
@@ -35553,7 +35402,7 @@
 	layer = 3
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "rsr_base";
 	pixel_y = -32;
 	req_one_access = list(47);
@@ -35630,14 +35479,14 @@
 /area/medical/cryo/autoresleeve)
 "pAU" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_outer";
 	locked = 1;
 	name = "External Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "needle";
 	name = "exterior access button";
 	pixel_y = 26
@@ -35717,9 +35566,7 @@
 	RCon_tag = "Exploration Substation Bypass"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "pDC" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/firealarm{
@@ -37300,9 +37147,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "qgN" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -37984,14 +37829,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/cafeteria)
-"qyJ" = (
-/obj/effect/floor_decal/rust,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel_dirty{
-	outdoors = 1
-	},
-/area/surface/outside/path/plains)
 "qyU" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold/hidden{
@@ -38059,9 +37896,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "qAI" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "1-8"
@@ -38072,9 +37907,7 @@
 "qAR" = (
 /obj/structure/prop/rock/water,
 /turf/simulated/floor/water/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "qBP" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "1-4"
@@ -38799,7 +38632,6 @@
 /turf/simulated/floor/plating,
 /area/engineering/hallway/atmos_hallway)
 "qUJ" = (
-/obj/machinery/autolathe,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
@@ -38815,8 +38647,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
-/obj/fiftyspawner/steel,
-/obj/fiftyspawner/glass,
+/obj/machinery/rnd/production/protolathe/department/cargo,
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "qUN" = (
@@ -39947,7 +39778,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/surface/outpost/mining_main)
 "rrk" = (
-/mob/living/simple_mob/animal/passive/raccoon_ch,
+/mob/living/simple_mob/animal/passive/raccoon,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/surface/outside/plains/outpost)
@@ -40344,9 +40175,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "rzO" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "1-8"
@@ -41177,7 +41006,6 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 2;
-	id_tag = null;
 	name = "EMT Bay";
 	req_access = list(5)
 	},
@@ -41248,7 +41076,7 @@
 	},
 /area/surface/outside/plains/outpost)
 "rVb" = (
-/obj/machinery/mecha_part_fabricator/pros,
+/obj/machinery/mecha_part_fabricator_tg/prosthetics,
 /obj/machinery/camera/network/research{
 	c_tag = "SCI - Robotics Fore"
 	},
@@ -41283,7 +41111,7 @@
 /obj/effect/floor_decal/industrial/warning/cee,
 /obj/machinery/light,
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_sensor";
 	pixel_x = -28;
 	pixel_y = -1
@@ -41402,7 +41230,6 @@
 "saV" = (
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 2;
-	id_tag = null;
 	name = "EMT Bay";
 	req_access = list(5)
 	},
@@ -41564,7 +41391,7 @@
 /obj/effect/floor_decal/corner/green/bordercorner{
 	dir = 1
 	},
-/obj/machinery/r_n_d/circuit_imprinter,
+/obj/machinery/rnd/production/circuit_imprinter,
 /obj/item/reagent_containers/glass/beaker/sulphuric,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/workshop)
@@ -41684,9 +41511,7 @@
 "shq" = (
 /obj/structure/closet/firecloset/full,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "shy" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/yellow/border,
@@ -44069,9 +43894,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "tgD" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -45303,9 +45126,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "tFB" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -45367,7 +45188,7 @@
 	dir = 4
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_dock";
 	pixel_x = -26
 	},
@@ -45749,9 +45570,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "tNy" = (
 /obj/structure/closet/secure_closet/medical2,
 /obj/effect/floor_decal/borderfloorblack{
@@ -46005,9 +45824,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "tTW" = (
 /obj/machinery/light{
 	dir = 1
@@ -46351,7 +46168,6 @@
 /obj/machinery/computer/timeclock/premade/east,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
@@ -46498,13 +46314,13 @@
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
 "uhQ" = (
-/obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25
 	},
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/lime/border,
+/obj/machinery/rnd/production/protolathe/department/service,
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
 "uhR" = (
@@ -46880,9 +46696,7 @@
 /area/holodeck_control)
 "usd" = (
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "usC" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
@@ -47693,9 +47507,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "uGB" = (
 /obj/machinery/button/remote/airlock{
 	id = "unit2";
@@ -49128,7 +48940,6 @@
 	dir = 8
 	},
 /obj/machinery/computer/shuttle_control/mining{
-	ai_control = 1;
 	dir = 1
 	},
 /turf/simulated/shuttle/floor/purple,
@@ -49274,15 +49085,12 @@
 "viC" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "viQ" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/research)
 "vjf" = (
 /obj/machinery/computer/shuttle_control/research{
-	ai_control = 1;
 	req_one_access = list(47)
 	},
 /obj/machinery/light{
@@ -49290,7 +49098,7 @@
 	layer = 3
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "rsr_elevator";
 	pixel_x = 25;
 	pixel_y = -8;
@@ -49343,7 +49151,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command{
-	id_tag = null;
 	name = "Research Director Quarters";
 	req_access = list(30)
 	},
@@ -49433,9 +49240,7 @@
 /area/surface/outside/path/plains)
 "vlF" = (
 /turf/simulated/open,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "vlH" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -50015,7 +49820,6 @@
 	dir = 4
 	},
 /obj/machinery/computer/shuttle_control/research{
-	ai_control = 1;
 	dir = 1;
 	req_one_access = list(47)
 	},
@@ -50409,8 +50213,7 @@
 "vDy" = (
 /obj/structure/sign/directions/evac{
 	dir = 4;
-	pixel_y = 32;
-	pixel_z = 8
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
@@ -50613,7 +50416,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/foyer)
 "vHD" = (
-/obj/machinery/r_n_d/server/robotics,
+/obj/machinery/rnd/server,
 /turf/simulated/floor/bluegrid{
 	name = "Server Base";
 	nitrogen = 500;
@@ -50691,7 +50494,7 @@
 /turf/simulated/floor/outdoors/dirt,
 /area/engineering/foyer)
 "vJP" = (
-/obj/machinery/r_n_d/circuit_imprinter,
+/obj/machinery/rnd/production/circuit_imprinter,
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
@@ -50818,9 +50621,7 @@
 /area/crew_quarters/kitchen)
 "vNh" = (
 /turf/simulated/wall/r_wall,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "vNR" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/wood/alt/panel,
@@ -50911,9 +50712,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "vQW" = (
 /obj/structure/flora/ausbushes/grassybush{
 	opacity = 1
@@ -52160,9 +51959,7 @@
 /turf/simulated/wall/r_wall{
 	cached_rad_resistance = 150
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "wqg" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -52387,7 +52184,7 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "car_mining";
 	pixel_x = 25;
 	pixel_y = -8;
@@ -53041,9 +52838,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "wJc" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -54018,11 +53813,6 @@
 "xfB" = (
 /obj/structure/bed/double/padded{
 	name = "taur-sized bed";
-	pixel_x = 3;
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded{
-	name = "taur-sized bed";
 	pixel_x = 3
 	},
 /turf/simulated/floor/wood,
@@ -54666,7 +54456,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "xsk" = (
-/obj/machinery/computer/rdconsole/core,
+/obj/machinery/computer/rdconsole_tg,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 9
 	},
@@ -56168,9 +55958,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "xOC" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/window/reinforced/full,
@@ -56275,27 +56063,13 @@
 	},
 /obj/item/clothing/mask/gas/clear,
 /obj/item/clothing/mask/gas/clear,
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/security_ses)
 "xRi" = (
@@ -57020,9 +56794,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "ydT" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
@@ -76587,7 +76359,7 @@ qiX
 tWF
 lNx
 iUy
-wru
+aaa
 wru
 kxf
 tiw
@@ -87516,7 +87288,7 @@ kTO
 cjz
 cjz
 cjz
-cjz
+xfB
 xfB
 kTO
 cKE
@@ -87773,7 +87545,7 @@ kTO
 rmu
 cjz
 cjz
-cjz
+bdE
 dUq
 kTO
 cKE
@@ -96413,7 +96185,7 @@ wEa
 ygw
 erG
 ygB
-qyJ
+erG
 hFV
 lvr
 grB
@@ -96669,8 +96441,8 @@ yeV
 wZt
 erG
 wZt
-qyJ
-hJD
+erG
+erG
 guI
 vtG
 vBx
@@ -98715,7 +98487,7 @@ odJ
 oAi
 edc
 sQk
-fwx
+bhC
 bhC
 oEs
 pBN

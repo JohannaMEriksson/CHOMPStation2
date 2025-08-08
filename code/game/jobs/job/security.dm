@@ -18,17 +18,17 @@
 	access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
 						access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 						access_research, access_engine, access_mining, access_medical, access_construction, access_mailsorting,
-			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks, access_teleporter) //CHOMP Edit: Restores what access is given in security.dm.
+						access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks, access_teleporter) //CHOMP Edit: Restores what access is given in security.dm.
 	minimal_access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
 						access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 						access_research, access_engine, access_mining, access_medical, access_construction, access_mailsorting,
-			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks, access_teleporter) //CHOMP Edit: Restores what access is given in security.dm.
+						access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks, access_teleporter) //CHOMP Edit: Restores what access is given in security.dm.
 	minimum_character_age = 25
 	min_age_by_species = list(SPECIES_HUMAN_VATBORN = 14)
 	minimal_player_age = 31 //ChompEDIT
 	ideal_character_age = 50
 	ideal_age_by_species = list(SPECIES_HUMAN_VATBORN = 20)
-	banned_job_species = list(SPECIES_TESHARI, SPECIES_DIONA, SPECIES_PROMETHEAN, SPECIES_ZADDAT, "digital", SPECIES_UNATHI, "mechanical")
+	banned_job_species = list(SPECIES_TESHARI, SPECIES_DIONA, SPECIES_PROMETHEAN, SPECIES_ZADDAT, FBP_DIGITAL, SPECIES_UNATHI, FBP_MECHANICAL)
 	disallow_jobhop = TRUE
 	pto_type = PTO_SECURITY
 	dept_time_required = 60

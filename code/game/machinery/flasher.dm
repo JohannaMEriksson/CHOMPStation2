@@ -24,6 +24,16 @@
 	base_state = "pflash"
 	density = TRUE
 
+/obj/machinery/flasher/portable/Initialize(mapload)
+	..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/machinery/flasher/portable/LateInitialize()
+	// Map start flashers enable proximity sensing
+	if(anchored)
+		add_overlay("[base_state]-s")
+		sense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity))
+
 /obj/machinery/flasher/power_change()
 	..()
 	if(!(stat & NOPOWER))
@@ -97,9 +107,7 @@
 		flash()
 	..(severity)
 
-// CHOMPEdit Start
 /obj/machinery/flasher/portable/HasProximity(turf/T, datum/weakref/WF, oldloc)
-	SIGNAL_HANDLER
 	if(isnull(WF))
 		return
 
@@ -107,7 +115,6 @@
 	if(isnull(AM))
 		log_debug("DEBUG: HasProximity called without reference on [src].")
 		return
-// CHOMPEdit End
 	if(disable || !anchored || (last_flash && world.time < last_flash + 150))
 		return
 
@@ -145,7 +152,7 @@
 	active = 1
 	icon_state = "launcheract"
 
-	for(var/obj/machinery/flasher/M in machines)
+	for(var/obj/machinery/flasher/M in GLOB.machines)
 		if(M.id == id)
 			spawn()
 				M.flash()

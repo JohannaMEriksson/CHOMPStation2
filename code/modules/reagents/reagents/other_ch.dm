@@ -17,6 +17,8 @@
 	var/spiders_min = 6
 	var/spiders_max = 24
 	var/spider_type = /obj/effect/spider/spiderling
+	supply_conversion_value = REFINERYEXPORT_VALUE_NO
+	industrial_use = REFINERYEXPORT_REASON_BIOHAZARD
 
 /datum/reagent/liquidspideregg/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(prob(1))
@@ -63,6 +65,8 @@
 	metabolism = 0.01
 	strength = 10//Don't drink it
 	mrate_static = TRUE
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
 
 /datum/reagent/purplesap
 	name = REAGENT_ID_PURPLESAP
@@ -70,6 +74,8 @@
 	description = "Purple liquid. It is very sticky and smells of ammonia."
 	color = "#7a48a0"
 	taste_description = "Ammonia"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
 
 /datum/reagent/orangesap
 	name = REAGENT_ORANGESAP
@@ -77,6 +83,8 @@
 	description = "Orange liquid. It wobbles around a bit like jelly."
 	color = "#e0962f"
 	taste_description = "Ammonia"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
 
 //YW stuff
 
@@ -88,6 +96,8 @@
 	taste_mult = 0.4
 	metabolism = REM * 2.5
 	color = "#929292"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
 
 /datum/reagent/phenethylamine
 	name = REAGENT_PHENETHYLAMINE
@@ -95,6 +105,8 @@
 	description = "Just looking at this makes you feel odd. Whether or not this would be good to consume is likely a gamble."
 	color = "#463667"
 	data = list("count"=1)
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RECDRUG
 /datum/reagent/phenethylamine/on_mob_life(var/mob/living/M as mob)
 	if(!M) M = holder.my_atom
 	if(data)
@@ -125,7 +137,7 @@
 	desc = "You probably shouldn't swallow this."
 	icon_state = "pill2"
 
-/obj/item/reagent_containers/pill/benzilate/Initialize()
+/obj/item/reagent_containers/pill/benzilate/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_BENZILATE, 50)
 	color = reagents.get_color()
@@ -136,7 +148,7 @@
 	desc = "Smells like... lilacs?"
 	icon_state = "pill5"
 
-/obj/item/reagent_containers/pill/phenethylamine/Initialize()
+/obj/item/reagent_containers/pill/phenethylamine/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_PHENETHYLAMINE, 50)
 	color = reagents.get_color()
@@ -148,8 +160,8 @@
 	name = "bottle of Benzilate pills"
 	desc = "This just hurts to look at with how many words of caution are scrawled on the lable. Better eat all of 'em!"
 
-/obj/item/storage/pill_bottle/benzilate/New()
-	..()
+/obj/item/storage/pill_bottle/benzilate/Initialize(mapload)
+	. = ..()
 	new /obj/item/reagent_containers/pill/benzilate( src )
 	new /obj/item/reagent_containers/pill/benzilate( src )
 	new /obj/item/reagent_containers/pill/benzilate( src )
@@ -162,8 +174,8 @@
 	name = "bottle of Phenethylamine pills"
 	desc = "Looks like someone drew a happy face on the label, replacing whatever was previously present."
 
-/obj/item/storage/pill_bottle/phenethylamine/New()
-	..()
+/obj/item/storage/pill_bottle/phenethylamine/Initialize(mapload)
+	. = ..()
 	new /obj/item/reagent_containers/pill/phenethylamine( src )
 	new /obj/item/reagent_containers/pill/phenethylamine( src )
 	new /obj/item/reagent_containers/pill/phenethylamine( src )

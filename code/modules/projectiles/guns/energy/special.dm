@@ -35,6 +35,7 @@
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
 	desc = "A gun that discharges high amounts of controlled radiation to slowly break a target into component elements."
+	icon = 'icons/obj/gun.dmi' // CHOMPEdit: Gun Sprites
 	icon_state = "decloner"
 	item_state = "decloner"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 4, TECH_POWER = 3)
@@ -61,9 +62,10 @@
 		list(mode_name="induce mutations", projectile_type=/obj/item/projectile/energy/floramut, modifystate="floramut"),
 		list(mode_name="increase yield", projectile_type=/obj/item/projectile/energy/florayield, modifystate="florayield"),
 		list(mode_name="induce specific mutations", projectile_type=/obj/item/projectile/energy/floramut/gene, modifystate="floramut"),
+		list(mode_name="prune reagents", projectile_type=/obj/item/projectile/energy/floraprune, modifystate="floramut"),
 		)
 
-/obj/item/gun/energy/floragun/Initialize()
+/obj/item/gun/energy/floragun/Initialize(mapload)
 	. = ..()
 	emitter = new(src)
 
@@ -126,6 +128,7 @@
 	var/obj/item/projectile/energy/floramut/gene/G = .
 	var/obj/item/projectile/energy/florayield/GY = .
 	var/obj/item/projectile/energy/floramut/GM = .
+	var/obj/item/projectile/energy/floraprune/GP = .
 	// Inserting the upgrade level of the gun to the projectile as there isn't a better way to do this.
 	if(istype(G))
 		G.gene = gene
@@ -134,6 +137,8 @@
 		GY.lasermod = emitter.rating
 	else if(istype(GM))
 		GM.lasermod = emitter.rating
+	else if(istype(GP))
+		GP.lasermod = emitter.rating
 
 /obj/item/gun/energy/meteorgun
 	name = "meteor gun"
@@ -169,6 +174,7 @@
 /obj/item/gun/energy/toxgun
 	name = "phoron pistol"
 	desc = "A specialized firearm designed to fire lethal bolts of phoron."
+	icon = 'icons/obj/gun.dmi'
 	icon_state = "toxgun"
 	w_class = ITEMSIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5, TECH_PHORON = 4)

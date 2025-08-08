@@ -94,7 +94,7 @@
 			if("Peace")
 				to_chat(user, span_infoplain(span_bold("Whatever alien sentience that the Wish Granter possesses is satisfied with your wish. There is a distant wailing as the last of the Faithless begin to die, then silence.")))
 				to_chat(user, span_infoplain("You feel as if you just narrowly avoided a terrible fate..."))
-				for(var/mob/living/simple_mob/faithless/F in living_mob_list)
+				for(var/mob/living/simple_mob/faithless/F in GLOB.living_mob_list)
 					F.health = -10
 					F.set_stat(DEAD)
 					F.icon_state = "faithless_dead"
@@ -125,7 +125,7 @@
 
 	if(ishuman(M) || istype(M, /mob/living/carbon/monkey))
 		for(var/mob/O in viewers(world.view, src.loc))
-			to_chat(O, "<font color='red'>[M] triggered the [icon2html(src)] [src]</font>")
+			to_chat(O, span_red("[M] triggered the [icon2html(src)] [src]"))
 		triggered = 1
 		call(src,triggerproc)(M)
 
@@ -157,8 +157,8 @@
 
 	spawn(rand(800,1200))
 		if(stat == DEAD)
-			dead_mob_list -= src
-			living_mob_list += src
+			GLOB.dead_mob_list -= src
+			GLOB.living_mob_list += src
 		set_stat(CONSCIOUS)
 		tod = null
 		setToxLoss(0)

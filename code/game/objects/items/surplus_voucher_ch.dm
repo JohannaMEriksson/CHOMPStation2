@@ -52,8 +52,7 @@
 	spawn_item(get_turf(src))
 
 /obj/item/surplus_voucher/eng/proc/spawn_item(var/turf/T)
-	var/path = pick(prob(2);/datum/design/item/powercell/high,
-					prob(2);/obj/item/storage/briefcase/inflatable,
+	var/path = pick(prob(2);/obj/item/storage/briefcase/inflatable,
 					prob(2);/obj/item/clamp,
 					prob(3);/obj/item/extinguisher,
 					prob(3);/obj/item/weldingtool/largetank,
@@ -147,7 +146,7 @@
 					prob(2);/obj/item/ammo_magazine/ammo_box/b12g/stunshell,
 					prob(2);/obj/item/ammo_magazine/m45/rubber,
 					prob(2);/obj/item/ammo_magazine/m9mmt/rubber,
-                    prob(2);/obj/item/cell/device/weapon,
+					prob(2);/obj/item/cell/device/weapon,
 					prob(1);/obj/item/toy/plushie/borgplushie)
 	playsound(T, 'sound/effects/phasein.ogg', 25, 1)
 	new path(T)

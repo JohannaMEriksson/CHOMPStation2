@@ -8,6 +8,9 @@
 	reagent_state = LIQUID
 	color = "#FF9999"
 	scannable = 1
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_DRUG
+
 
 /datum/reagent/aphrodisiac/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(!M)	return
@@ -22,6 +25,8 @@
 	reagent_state = LIQUID
 	color = "#10881A"
 	overdose = REAGENTS_OVERDOSE
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_ILLDRUG
 
 /datum/reagent/sorbitol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.make_dizzy(1)
@@ -40,19 +45,3 @@
 				//absorption reagent production
 				if(B.show_liquids && B.reagent_mode_flags & DM_FLAG_REAGENTSABSORB && B.reagents.total_volume < B.reagents.maximum_volume)
 					B.GenerateBellyReagents_absorbed()
-
-/datum/reagent/radium/concentrated
-	name = REAGENT_CONCENTRATEDRADIUM
-	id = REAGENT_ID_CONCENTRATEDRADIUM
-	description = "Concentrated Radium is a more potent variant of regular radium, able to pierce and irradiate a subject through their skin."
-	taste_mult = 0	//Apparently radium is tasteless
-	reagent_state = SOLID
-	color = "#C7C7C7"
-
-/datum/reagent/radium/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(issmall(M)) removed *= 2
-	M.apply_effect(10 * removed, IRRADIATE, 0) // Radium may increase your chances to cure a disease
-
-/datum/reagent/radium/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
-	if(issmall(M)) removed *= 2
-	M.apply_effect(10 * removed, IRRADIATE, 0) // Radium may increase your chances to cure a disease

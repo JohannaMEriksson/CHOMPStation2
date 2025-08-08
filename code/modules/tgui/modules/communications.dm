@@ -33,13 +33,12 @@
 
 	var/datum/announcement/priority/crew_announcement
 
-	var/datum/lore/atc_controller/ATC
+	var/datum/weakref/ATC
 
 	var/list/req_access = list()
 
 /datum/tgui_module/communications/New(host)
 	. = ..()
-	ATC = atc
 	crew_announcement = new()
 	crew_announcement.newscast = TRUE
 
@@ -65,16 +64,16 @@
 
 /datum/tgui_module/communications/proc/change_security_level(mob/user, new_level)
 	tmp_alertlevel = new_level
-	var/old_level = security_level
+	var/old_level = GLOB.security_level
 	if(!tmp_alertlevel) tmp_alertlevel = SEC_LEVEL_GREEN
 	if(tmp_alertlevel < SEC_LEVEL_GREEN) tmp_alertlevel = SEC_LEVEL_GREEN
 	if(tmp_alertlevel > SEC_LEVEL_BLUE) tmp_alertlevel = SEC_LEVEL_BLUE //Cannot engage delta with this
 	set_security_level(tmp_alertlevel)
-	if(security_level != old_level)
+	if(GLOB.security_level != old_level)
 		//Only notify the admins if an actual change happened
 		log_game("[key_name(user)] has changed the security level to [get_security_level()].")
 		message_admins("[key_name_admin(user)] has changed the security level to [get_security_level()].")
-		switch(security_level)
+		switch(GLOB.security_level)
 			if(SEC_LEVEL_GREEN)
 				feedback_inc("alert_comms_green",1)
 			if(SEC_LEVEL_YELLOW)
@@ -94,7 +93,7 @@
 	data["emagged"]       = emagged
 	data["authenticated"] = is_authenticated(user, 0)
 	data["authmax"] = data["authenticated"] == COMM_AUTHENTICATION_MAX ? TRUE : FALSE
-	data["atcsquelch"] = ATC.squelched
+	data["atcsquelch"] = SSatc.is_squelched()
 	data["boss_short"] = using_map.boss_short
 
 	data["stat_display"] =  list(
@@ -111,8 +110,8 @@
 		),
 	)
 
-	data["security_level"] = security_level
-	switch(security_level)
+	data["security_level"] = GLOB.security_level
+	switch(GLOB.security_level)
 		if(SEC_LEVEL_BLUE)
 			data["security_level_color"] = "blue";
 		if(SEC_LEVEL_ORANGE)
@@ -298,7 +297,7 @@
 			setMenuState(ui.user, COMM_SCREEN_MESSAGES)
 
 		if("toggleatc")
-			ATC.squelched = !ATC.squelched
+			SSatc.reroute_traffic(yes = !SSatc.is_squelched(), silent = TRUE)
 
 		if("delmessage")
 			var/datum/comm_message_listener/l = obtain_message_listener()
@@ -327,11 +326,11 @@
 					post_status(src, params["statdisp"], user = ui.user)
 
 		if("setmsg1")
-			stat_msg1 = reject_bad_text(sanitize(tgui_input_text(ui.user, "Line 1", "Enter Message Text", stat_msg1, 40), 40), 40)
+			stat_msg1 = reject_bad_text(tgui_input_text(ui.user, "Line 1", "Enter Message Text", stat_msg1, 40), 40)
 			setMenuState(ui.user, COMM_SCREEN_STAT)
 
 		if("setmsg2")
-			stat_msg2 = reject_bad_text(sanitize(tgui_input_text(ui.user, "Line 2", "Enter Message Text", stat_msg2, 40), 40), 40)
+			stat_msg2 = reject_bad_text(tgui_input_text(ui.user, "Line 2", "Enter Message Text", stat_msg2, 40), 40)
 			setMenuState(ui.user, COMM_SCREEN_STAT)
 
 		// OMG CENTCOMM LETTERHEAD
@@ -340,10 +339,10 @@
 				if(centcomm_message_cooldown > world.time)
 					to_chat(ui.user, span_warning("Arrays recycling. Please stand by."))
 					return
-				var/input = sanitize(tgui_input_text(ui.user, "Please choose a message to transmit to [using_map.boss_short] via quantum entanglement. \
+				var/input = tgui_input_text(ui.user, "Please choose a message to transmit to [using_map.boss_short] via quantum entanglement. \
 				Please be aware that this process is very expensive, and abuse will lead to... termination.  \
 				Transmission does not guarantee a response. \
-				There is a 30 second delay before you may send another message, be clear, full and concise.", "Central Command Quantum Messaging", multiline = TRUE, prevent_enter = TRUE))
+				There is a 30 second delay before you may send another message, be clear, full and concise.", "Central Command Quantum Messaging", "", MAX_MESSAGE_LEN, TRUE, prevent_enter = TRUE)
 				if(!input || ..() || !(is_authenticated(ui.user) == COMM_AUTHENTICATION_MAX))
 					return
 				if(length(input) < COMM_CCMSGLEN_MINIMUM)
@@ -361,7 +360,7 @@
 				if(centcomm_message_cooldown > world.time)
 					to_chat(ui.user, "Arrays recycling.  Please stand by.")
 					return
-				var/input = sanitize(tgui_input_text(ui.user, "Please choose a message to transmit to \[ABNORMAL ROUTING CORDINATES\] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination. Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "To abort, send an empty message.", ""))
+				var/input = tgui_input_text(ui.user, "Please choose a message to transmit to \[ABNORMAL ROUTING CORDINATES\] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination. Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "To abort, send an empty message.", "", MAX_MESSAGE_LEN)
 				if(!input || ..() || !(is_authenticated(ui.user) == COMM_AUTHENTICATION_MAX))
 					return
 				if(length(input) < COMM_CCMSGLEN_MINIMUM)
@@ -382,14 +381,14 @@
 
 /* Etc global procs */
 /proc/enable_prison_shuttle(var/mob/user)
-	for(var/obj/machinery/computer/prison_shuttle/PS in machines)
+	for(var/obj/machinery/computer/prison_shuttle/PS in GLOB.machines)
 		PS.allowedtocall = !(PS.allowedtocall)
 
 /proc/call_shuttle_proc(var/mob/user)
 	if ((!( ticker ) || !emergency_shuttle.location()))
 		return
 
-	if(!universe.OnShuttleCall(user))
+	if(!GLOB.universe.OnShuttleCall(user))
 		to_chat(user, span_notice("Cannot establish a bluespace connection."))
 		return
 

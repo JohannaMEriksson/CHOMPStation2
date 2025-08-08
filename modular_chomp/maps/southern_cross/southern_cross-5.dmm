@@ -76,6 +76,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/surface/outpost/main/corridor/left_lower)
+"ak" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/surface/outpost/engineering/atmos_room)
+"al" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/plating,
+/area/surface/outpost/engineering/atmos_room)
 "am" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -189,9 +199,12 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/mining_main/emergencystorage)
 "av" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
+/obj/machinery/portable_atmospherics/canister/empty,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/plating,
 /area/surface/outpost/engineering/atmos_room)
 "aw" = (
@@ -273,6 +286,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/surface/outpost/main/corridor/dorms)
+"aC" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/surface/outpost/engineering/atmos_room)
 "aD" = (
 /obj/effect/mist,
 /turf/simulated/floor/water/pool,
@@ -310,6 +329,13 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled,
 /area/surface/outpost/mining_main/tools)
+"aH" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/outpost/engineering/atmos_room)
 "aI" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -430,6 +456,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/security)
+"aU" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/empty,
+/turf/simulated/floor/plating,
+/area/surface/outpost/engineering/atmos_room)
 "aV" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/canister,
@@ -516,6 +549,23 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/steel/sif/planetuse,
 /area/surface/outside/plains/outpost)
+"bd" = (
+/obj/machinery/atmospherics/omni/mixer{
+	active_power_usage = 7500;
+	tag_east = 2;
+	tag_south_con = 0.79;
+	tag_west = 1;
+	tag_west_con = 0.21;
+	tag_south = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/outpost/engineering/atmos_room)
+"be" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/empty,
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/plating,
+/area/surface/outpost/engineering/atmos_room)
 "bf" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
@@ -758,6 +808,10 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_2)
+"bA" = (
+/obj/effect/landmark/start/ghost_roles,
+/turf/simulated/floor/outdoors/grass/sif/forest/planetuse,
+/area/surface/outside/plains/normal)
 "bB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -768,6 +822,10 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood,
 /area/surface/outpost/civilian/sauna)
+"bC" = (
+/obj/effect/landmark/start/ghost_roles,
+/turf/simulated/floor/outdoors/grass/sif/planetuse,
+/area/surface/outside/plains/normal)
 "bD" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
@@ -785,6 +843,10 @@
 /obj/item/extinguisher/mini,
 /turf/simulated/floor/tiled,
 /area/surface/outpost/mining_main)
+"bF" = (
+/obj/effect/landmark/start/ghost_roles,
+/turf/simulated/floor/outdoors/dirt/sif/planetuse,
+/area/surface/outside/plains/normal)
 "bG" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/monotile,
@@ -2701,10 +2763,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/engineering/monitoring)
-"fv" = (
-/obj/machinery/portable_atmospherics/canister/air,
-/turf/simulated/floor/plating,
-/area/surface/outpost/engineering/atmos_room)
 "fw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -3131,7 +3189,7 @@
 	},
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 1;
-	frequency = 1438;
+	frequency = 1433;
 	id = "rust_cooling_in";
 	name = "Coolant Injector";
 	pixel_y = 1;
@@ -4000,6 +4058,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 8
 	},
+/obj/machinery/meter,
 /turf/simulated/floor/plating,
 /area/surface/outpost/engineering/atmos_room)
 "ib" = (
@@ -4427,7 +4486,7 @@
 	dir = 6
 	},
 /obj/machinery/air_sensor{
-	frequency = 1438;
+	frequency = 1433;
 	id_tag = "rustengine_sensor";
 	output = 63
 	},
@@ -8283,7 +8342,7 @@
 	tag_east = 5;
 	tag_north = 2;
 	tag_south = 1;
-	tag_west = 6
+	tag_west = 3
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/engineering/atmos_room)
@@ -10869,13 +10928,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/plating,
 /area/surface/outpost/engineering/reactor_smes)
-"uP" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
-	dir = 1
-	},
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/outpost/engineering/atmos_room)
 "uQ" = (
 /obj/structure/cable/blue{
 	icon_state = "0-2"
@@ -12092,8 +12144,10 @@
 	},
 /area/surface/outside/path/plains)
 "xr" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
-	dir = 4
+/obj/machinery/atmospherics/omni/atmos_filter{
+	tag_north = 4;
+	tag_south = 1;
+	tag_west = 2
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/engineering/atmos_room)
@@ -14867,7 +14921,8 @@
 /obj/machinery/atmospherics/omni/atmos_filter{
 	tag_east = 7;
 	tag_north = 2;
-	tag_south = 1
+	tag_south = 1;
+	tag_west = 6
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/engineering/atmos_room)
@@ -15602,6 +15657,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outpost/mining_main/uxstorage)
 "Em" = (
@@ -19099,7 +19155,7 @@
 	dir = 1;
 	external_pressure_bound = 100;
 	external_pressure_bound_default = 0;
-	frequency = 1438;
+	frequency = 1433;
 	icon_state = "map_vent_in";
 	id_tag = "rust_cooling_out";
 	initialize_directions = 1;
@@ -22000,7 +22056,6 @@
 	icon_state = "0-8"
 	},
 /obj/structure/cable/heavyduty{
-	dir = 4;
 	icon_state = "0-4"
 	},
 /obj/effect/wingrille_spawn/reinforced_phoron,
@@ -29023,7 +29078,7 @@ yj
 yj
 yj
 yj
-yj
+bA
 XE
 XE
 XE
@@ -43734,7 +43789,7 @@ yj
 yj
 yj
 yj
-yj
+bA
 XE
 Vg
 "}
@@ -50466,7 +50521,7 @@ ha
 nH
 ha
 ha
-ha
+KP
 KP
 KP
 KP
@@ -50725,12 +50780,12 @@ nH
 ha
 ha
 KP
-KP
+be
+aC
+al
 av
-av
-av
+ak
 yI
-fv
 KP
 Ih
 pg
@@ -50984,8 +51039,8 @@ ha
 ha
 KP
 ZA
-mE
-xr
+bd
+aC
 xr
 qd
 CB
@@ -51242,8 +51297,8 @@ ha
 ha
 KP
 qy
-uP
-hZ
+mE
+aH
 hZ
 jY
 jY
@@ -51501,7 +51556,7 @@ ha
 KP
 dU
 yB
-yB
+aU
 yB
 as
 Kk
@@ -67727,7 +67782,7 @@ yT
 yT
 Ey
 Ey
-Ey
+bC
 bv
 bv
 rV
@@ -88880,7 +88935,7 @@ yT
 yT
 yT
 yT
-yT
+bF
 XE
 XE
 XE

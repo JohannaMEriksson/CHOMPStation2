@@ -16,6 +16,7 @@
 	/mob/living/simple_mob/animal/passive/chicken,
 	/mob/living/simple_mob/animal/passive/opossum,
 	/mob/living/simple_mob/animal/passive/mouse,
+	/mob/living/simple_mob/animal/passive/mothroach,
 	/mob/living/simple_mob/vore/rabbit,
 	/mob/living/simple_mob/animal/goat,
 	/mob/living/simple_mob/animal/sif/tymisian,
@@ -34,8 +35,8 @@
 	//So if xenoarch isn't careful and is just shoving items willy-nilly without taking the proper precautions they can end up in a bit of trouble!
 
 
-/obj/machinery/replicator/vore/New() //This replicator turns people into mobs!
-	..() //TODO: Someone can replace the 'alien' interface with something neater sometime. It is simply out of my abilities at the current moment.
+/obj/machinery/replicator/vore/Initialize(mapload) //This replicator turns people into mobs!
+	. = ..() //TODO: Someone can replace the 'alien' interface with something neater sometime. It is simply out of my abilities at the current moment.
 
 	for(var/i=0, i<quantity, i++)
 		var/background = pick("yellow","purple","green","blue","red","orange","white")
@@ -128,7 +129,7 @@
 						M.vore_organs -= B
 						new_mob.vore_organs += B
 
-					M.soulgem.transfer_self(new_mob) //CHOMPAdd Soulcatcher
+					M.soulgem.transfer_self(new_mob) // Soulcatcher
 
 					new_mob.ckey = M.ckey
 					if(M.ai_holder && new_mob.ai_holder)
@@ -182,7 +183,7 @@
 						M.vore_organs -= B
 						new_mob.vore_organs += B
 
-					M.soulgem.transfer_self(new_mob) //CHOMPAdd Soulcatcher
+					M.soulgem.transfer_self(new_mob) // Soulcatcher
 
 					new_mob.ckey = M.ckey
 					if(M.ai_holder && new_mob.ai_holder)
@@ -211,7 +212,7 @@
 
 
 /obj/machinery/replicator/vore/attackby(obj/item/W as obj, mob/living/user as mob)
-	if(!W.canremove || !user.canUnEquip(W) || W.possessed_voice || is_type_in_list(W,item_vore_blacklist)) //No armblades, no putting possessed items in it!
+	if(!W.canremove || !user.canUnEquip(W) || W.possessed_voice || is_type_in_list(W, GLOB.item_vore_blacklist)) //No armblades, no putting possessed items in it!
 		to_chat(user, span_notice("You cannot put \the [W] into the machine."))
 		return
 	if(istype(W, /obj/item/holder/micro)) //Are you putting a micro in it?
@@ -357,7 +358,6 @@
 	/obj/item/clothing/gloves/black,
 	/obj/item/clothing/under/swimsuit/black,
 	/obj/item/clothing/under/shorts/black,
-	/obj/item/clothing/under/wetsuit_skimpy,
 	/obj/item/clothing/under/dress/maid,
 	/obj/item/clothing/under/fluff/latexmaid,
 	/obj/item/clothing/suit/oversize,
@@ -391,8 +391,8 @@
 	) 	// Currently: 3 gloves, 5 undersuits, 3 oversuits, 5 plushies, 5 headwear, 7 shoes, 7 misc. = 35
 		//Fishing hat was going to be added, but it was simply too powerful for this world.
 
-/obj/machinery/replicator/clothing/New() //The specific thing about the VORE replicator is that it will only contain obj/items. Only things that can be picked up, used, and worn!
-	..() //TODO: Someone can replace the 'alien' interface with something neater sometime. It is simply out of my abilities at the current moment.
+/obj/machinery/replicator/clothing/Initialize(mapload) //The specific thing about the VORE replicator is that it will only contain obj/items. Only things that can be picked up, used, and worn!
+	. = ..() //TODO: Someone can replace the 'alien' interface with something neater sometime. It is simply out of my abilities at the current moment.
 
 	for(var/i=0, i<quantity, i++)
 		var/background = pick("yellow","purple","green","blue","red","orange","white")
@@ -479,7 +479,7 @@
 	last_process_time = world.time
 
 /obj/machinery/replicator/clothing/attackby(obj/item/W as obj, mob/living/user as mob)
-	if(!W.canremove || !user.canUnEquip(W) || W.possessed_voice || is_type_in_list(W,item_vore_blacklist)) //No armblades, no putting already possessed items in it!
+	if(!W.canremove || !user.canUnEquip(W) || W.possessed_voice || is_type_in_list(W, GLOB.item_vore_blacklist)) //No armblades, no putting already possessed items in it!
 		to_chat(user, span_notice("You cannot put \the [W] into the machine."))
 		return
 	if(istype(W, /obj/item/holder/micro) || istype(W, /obj/item/holder/mouse)) //Are you putting a micro/mouse in it?

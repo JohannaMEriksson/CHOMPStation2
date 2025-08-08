@@ -42,7 +42,7 @@
 	else if(istype(W, /obj/item/pen))
 		switch(tgui_alert(user, "What would you like to alter?","Select Alteration",list("Title","Description","Cancel")))
 			if("Title")
-				var/str = sanitizeSafe(tgui_input_text(user,"Label text?","Set label","", MAX_NAME_LEN), MAX_NAME_LEN)
+				var/str = sanitizeSafe(tgui_input_text(user,"Label text?","Set label","", MAX_NAME_LEN, encode = FALSE), MAX_NAME_LEN)
 				if(!str || !length(str))
 					to_chat(user, span_warning(" Invalid text."))
 					return
@@ -57,7 +57,7 @@
 				else
 					nameset = 1
 			if("Description")
-				var/str = sanitize(tgui_input_text(user,"Label text?","Set label",""))
+				var/str = tgui_input_text(user,"Label text?","Set label","", MAX_MESSAGE_LEN)
 				if(!str || !length(str))
 					to_chat(user, span_red("Invalid text."))
 					return
@@ -153,7 +153,7 @@
 	else if(istype(W, /obj/item/pen))
 		switch(tgui_alert(user, "What would you like to alter?","Select Alteration",list("Title","Description","Cancel")))
 			if("Title")
-				var/str = sanitizeSafe(tgui_input_text(user,"Label text?","Set label","", MAX_NAME_LEN), MAX_NAME_LEN)
+				var/str = sanitizeSafe(tgui_input_text(user,"Label text?","Set label","", MAX_NAME_LEN, encode = FALSE), MAX_NAME_LEN)
 				if(!str || !length(str))
 					to_chat(user, span_warning(" Invalid text."))
 					return
@@ -169,7 +169,7 @@
 					nameset = 1
 
 			if("Description")
-				var/str = sanitize(tgui_input_text(user,"Label text?","Set label",""))
+				var/str = tgui_input_text(user,"Label text?","Set label","", MAX_MESSAGE_LEN)
 				if(!str || !length(str))
 					to_chat(user, span_red("Invalid text."))
 					return
@@ -394,7 +394,7 @@
 
 	var/c_mode = 0
 
-/obj/machinery/disposal/deliveryChute/Initialize()
+/obj/machinery/disposal/deliveryChute/Initialize(mapload)
 	. = ..()
 	trunk = locate() in src.loc
 	if(trunk)
@@ -494,4 +494,4 @@
 /obj/machinery/disposal/deliveryChute/Destroy()
 	if(trunk)
 		trunk.linked = null
-	..()
+	. = ..()

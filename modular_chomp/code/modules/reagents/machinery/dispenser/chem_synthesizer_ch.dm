@@ -1,8 +1,8 @@
 #define SYNTHESIZER_MAX_CARTRIDGES 40
 #define SYNTHESIZER_MAX_RECIPES 20
 #define SYNTHESIZER_MAX_QUEUE 40
-#define RECIPE_MAX_STRING 160
-#define RECIPE_MAX_STEPS 16
+#define RECIPE_MAX_STRING 240
+#define RECIPE_MAX_STEPS 20
 
 // Recipes are stored as a list which alternates between chemical id's and volumes to add, e.g. 1 = 'Carbon', 2 = 20, 3 = 'Silicon', 4 = 20
 /obj/machinery/chemical_synthesizer
@@ -71,7 +71,7 @@
 		REAGENT_ID_COPPER, REAGENT_ID_MERCURY, REAGENT_ID_RADIUM, REAGENT_ID_WATER, REAGENT_ID_ETHANOL, REAGENT_ID_SUGAR, REAGENT_ID_SACID, REAGENT_ID_TUNGSTEN, REAGENT_ID_CALCIUM
 		)
 
-/obj/machinery/chemical_synthesizer/Initialize()
+/obj/machinery/chemical_synthesizer/Initialize(mapload)
 	. = ..()
 	// Create the reagents datum which will act as the machine's reaction vessel.
 	create_reagents(600)
@@ -151,7 +151,7 @@
 /obj/machinery/chemical_synthesizer/proc/add_cartridge(obj/item/reagent_containers/chem_disp_cartridge/C, mob/user)
 	if(!panel_open)
 		if(user)
-			to_chat(user, span_warning("\The panel is locked!"))
+			to_chat(user, span_warning("The panel is locked!"))
 		return
 
 	if(!istype(C))
@@ -484,7 +484,7 @@
 		to_chat(user, "Please provide a unique recipe name!")
 		return
 
-	var/steps = 2 * tgui_input_number(user, "How many steps does your recipe contain (16 max)?", "Steps", 1, RECIPE_MAX_STEPS, 1) // Round to get a whole integer, clamp to ensure proper range.
+	var/steps = 2 * tgui_input_number(user, "How many steps does your recipe contain ([RECIPE_MAX_STEPS] max)?", "Steps", 1, RECIPE_MAX_STEPS, 1) // Round to get a whole integer, clamp to ensure proper range.
 	if(!steps)
 		to_chat(user, "Please input a valid number of steps!")
 		return
@@ -644,7 +644,7 @@
 	// After all this mess of code, we reach the line where the magic happens.
 	C.reagents.trans_to_holder(src.reagents, quantity)
 	update_icon() // Update underlays.
-	playsound(src, 'modular_chomp/sound/machines/HPLC_binary_pump.ogg', 15, 1)
+	playsound(src, 'sound/machines/HPLC_binary_pump.ogg', 15, 1)
 
 	// Advance to the next step in the recipe. If this is outside of the recipe's index, we're finished. Otherwise, proceed to next step.
 	step += 2

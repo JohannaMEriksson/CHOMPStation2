@@ -6,9 +6,9 @@
 	transforming = 1
 	canmove = 0
 	icon = null
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 	update_canmove()
-	dead_mob_list -= src
+	GLOB.dead_mob_list -= src
 
 	var/atom/movable/overlay/animation = null
 	animation = new(loc)
@@ -32,7 +32,7 @@
 	transforming = 1
 	canmove = 0
 	icon = null
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 
 	animation = new(loc)
 	animation.icon_state = "blank"
@@ -42,7 +42,7 @@
 	flick(anim, animation)
 	new remains(loc)
 
-	dead_mob_list -= src
+	GLOB.dead_mob_list -= src
 	spawn(15)
 		if(animation)	qdel(animation)
 		if(src)			qdel(src)
@@ -53,7 +53,7 @@
 	transforming = 1
 	canmove = 0
 	icon = null
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 
 	animation = new(loc)
 	animation.icon_state = "blank"
@@ -62,7 +62,7 @@
 
 	flick(anim, animation)
 
-	dead_mob_list -= src
+	GLOB.dead_mob_list -= src
 	spawn(15)
 		if(animation)	qdel(animation)
 		if(src)			qdel(src)
@@ -85,11 +85,9 @@
 		src.visible_message(span_infoplain(span_bold("\The [src.name]") + " [deathmessage]"))
 
 	set_stat(DEAD)
+	SSmotiontracker.ping(src,80)
 
 	update_canmove()
-
-	dizziness = 0
-	jitteriness = 0
 
 	layer = MOB_LAYER
 
@@ -116,8 +114,8 @@
 
 	timeofdeath = world.time
 	if(mind) mind.store_memory("Time of death: [stationtime2text()]", 0)
-	living_mob_list -= src
-	dead_mob_list |= src
+	GLOB.living_mob_list -= src
+	GLOB.dead_mob_list |= src
 
 	set_respawn_timer()
 	update_icon()
